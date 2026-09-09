@@ -1,0 +1,224 @@
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: var(--s20);
+  align-items: center;
+  padding-block: var(--s20);
+}
+.hero h1 {
+  margin-block: var(--s6);
+}
+.hero-intro {
+  max-width: 43ch;
+  margin-bottom: var(--s4);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s6);
+  margin-block: var(--s8);
+}
+.actions a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s3);
+}
+.availability {
+  color: var(--muted);
+  margin: var(--s8) 0 0;
+}
+.availability span {
+  margin-inline: var(--s2);
+}
+.work-index {
+  border-top: 3px solid var(--accent);
+  padding-top: var(--s6);
+}
+.index-intro {
+  font-family: "Newsreader Variable", Georgia, serif;
+  font-size: 32px;
+  line-height: 1.15;
+  margin-block: var(--s6);
+}
+.work-index ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.work-index li {
+  border-top: 1px solid var(--line);
+}
+.work-index li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.work-index li a {
+  display: grid;
+  grid-template-columns: var(--s8) 1fr auto;
+  gap: var(--s2);
+  padding-block: var(--s5);
+  color: var(--ink);
+  text-decoration: none;
+}
+.work-index li a:hover strong {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.index-number {
+  font-size: 12px;
+  color: var(--muted);
+  padding-top: var(--s1);
+}
+.work-index strong {
+  font-size: 16px;
+  font-weight: 500;
+}
+.work-index small {
+  display: block;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: var(--s1);
+}
+.index-note {
+  margin-top: var(--s5);
+  margin-bottom: 0;
+}
+.section {
+  padding-block: var(--s16);
+}
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--s8);
+}
+.section-heading h2 {
+  margin-bottom: 0;
+}
+.section-heading > p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+#work {
+  border-top: 1px solid var(--line);
+  scroll-margin-top: var(--s6);
+}
+.project-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--s16);
+  border-top: 1px solid var(--line);
+  padding-block: var(--s12);
+}
+.project-row:first-of-type {
+  margin-top: var(--s10);
+}
+.project-row:last-child {
+  padding-bottom: 0;
+}
+.project-copy h3 {
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: var(--s4);
+}
+.project-copy h3 a {
+  text-decoration: none;
+  color: var(--ink);
+}
+.project-copy h3 a:hover {
+  text-decoration: underline;
+  color: var(--accent);
+}
+.project-copy h3 span {
+  font-size: 20px;
+  color: var(--accent);
+  margin-left: var(--s2);
+}
+.project-headline {
+  font-size: 20px;
+  line-height: 1.4;
+  margin-top: var(--s6);
+  margin-bottom: var(--s3);
+  font-weight: 500;
+}
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: var(--s2) var(--s4);
+  padding: 0;
+  margin-block: var(--s5);
+  color: var(--muted);
+  font-size: 12px;
+}
+.tech-list li {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: var(--s1);
+}
+.project-figure {
+  padding: var(--s6);
+  background: var(--tint);
+  border-radius: 8px;
+}
+.project-regmais .project-figure {
+  background: var(--blue-tint);
+}
+.project-study-os .project-figure {
+  background: var(--amber-tint);
+}
+.capabilities-band {
+  background: var(--tint);
+  border-block: 1px solid var(--line);
+}
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s12);
+  margin-top: var(--s10);
+}
+.cap-number {
+  color: var(--accent);
+  font-family: "Newsreader Variable", Georgia, serif;
+  font-size: 32px;
+}
+.capabilities-grid h3 {
+  margin-top: var(--s4);
+  font-size: 20px;
+}
+.capabilities-grid p {
+  color: var(--muted);
+}
+.capabilities-grid a {
+  font-size: 14px;
+}
+.additional-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s12);
+  margin-top: var(--s8);
+}
+.additional-grid article:only-child {
+  grid-column: 1 / -1;
+  max-width: 65ch;
+}
+.additional-grid article {
+  border-top: 1px solid var(--line);
+  padding-top: var(--s6);
+}
+.additional-grid h3 {
+  font-size: 28px;
+  font-weight: 500;
+}
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s16);
+  border-top: 1px solid var(--line);
+}
+.contact {
+  border-top: 1px solid var(--line);
+}
+.contact .lead {
+  max-width: 50ch;
+}

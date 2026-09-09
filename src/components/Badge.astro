@@ -1,0 +1,17 @@
+---
+interface Props {
+  readonly tone?: "green" | "blue" | "amber";
+}
+
+const { tone = "green" } = Astro.props;
+---
+
+<span class:list={['badge', `badge--${tone}`]}><slot /></span>
+
+<style>
+  .badge { border-radius: 999px; display: inline-flex; font-size: 14px; font-weight: 500; line-height: 1.5; padding: 2px var(--s2); }
+  .badge--green { background: var(--tint); color: var(--accent-hover); }
+  .badge--blue { background: var(--blue-tint); color: var(--blue); }
+  .badge--amber { background: var(--amber-tint); color: var(--amber); }
+</style>
+

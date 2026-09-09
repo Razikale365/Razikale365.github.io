@@ -1,0 +1,42 @@
+---
+interface Step {
+  readonly title: string;
+  readonly detail: string;
+}
+
+interface Props {
+  readonly steps: readonly Step[];
+  readonly caption: string;
+}
+
+const { steps, caption } = Astro.props;
+---
+
+<figure class="flow">
+  <ol class="flow__steps" style={`--flow-columns: ${steps.length}`}>
+    {steps.map((step, index) => (
+      <li class="flow__step">
+        <span class="flow__index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+        <div>
+          <strong>{step.title}</strong>
+          <p>{step.detail}</p>
+        </div>
+      </li>
+    ))}
+  </ol>
+  <figcaption>{caption}</figcaption>
+</figure>
+
+<style>
+  .flow { container-type: inline-size; margin: 0; }
+  .flow__steps { display: grid; gap: 0; list-style: none; margin: 0; padding: 0; }
+  .flow__step { border: 1px solid var(--line); border-bottom: 0; display: grid; gap: var(--s4); grid-template-columns: 3rem 1fr; padding: var(--s5); position: relative; background: var(--surface); }
+  .flow__step:last-child { border-bottom: 1px solid var(--line); }
+  .flow__step:not(:last-child)::after { background: var(--line); bottom: calc(var(--s5) * -1); content: ''; height: var(--s5); left: 1.95rem; position: absolute; width: 1px; z-index: 1; }
+  .flow__index { color: var(--accent); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; line-height: 1.8; }
+  strong { display: block; font-size: 20px; line-height: 1.35; margin-bottom: var(--s1); }
+  p, figcaption { color: var(--muted); font-size: 14px; line-height: 1.5; margin: 0; max-width: 65ch; }
+  figcaption { border-left: 2px solid var(--accent); margin-top: var(--s4); padding-left: var(--s3); }
+  @container (min-width: 640px) { .flow__steps { grid-template-columns: repeat(var(--flow-columns, 3), minmax(0, 1fr)); } .flow__step { border-bottom: 1px solid var(--line); border-right: 0; grid-template-columns: 1fr; min-height: 170px; } .flow__step:last-child { border-right: 1px solid var(--line); } .flow__step:not(:last-child)::after { bottom: auto; height: 1px; left: auto; right: calc(var(--s5) * -1); top: 2.2rem; width: var(--s5); } }
+</style>
+

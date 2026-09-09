@@ -1,0 +1,50 @@
+---
+import geistFont from "@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url";
+import newsreaderFont from "@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2?url";
+import Link from "../components/Link.astro";
+import { profile } from "../content/profile";
+import "../styles/global.css";
+import "../styles/site.css";
+interface Props {
+  readonly title: string;
+  readonly description: string;
+  readonly noindex?: boolean;
+}
+const { title, description, noindex = false } = Astro.props;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
+const image = Astro.site ? new URL("/og.png", Astro.site) : undefined;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><link rel="preload" href={geistFont} as="font" type="font/woff2" crossorigin /><link rel="preload" href={newsreaderFont} as="font" type="font/woff2" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f7f6f2" />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    {canonical && <meta property="og:url" content={canonical} />}
+    {image && <meta property="og:image" content={image} />}
+    {image && <meta property="og:image:width" content="1200" />}
+    {image && <meta property="og:image:height" content="630" />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap.xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header container">
+      <a class="identity" href="/"><span class="monogram" aria-hidden="true">jn.</span><span>João Navarro<span class="identity-role">Software engineer</span></span></a>
+      <nav aria-label="Main navigation"><Link href="/#work" variant="nav">Work</Link><Link href="/resume/" variant="nav">Résumé</Link><Link href={profile.github} variant="nav">GitHub ↗</Link><Link href={`mailto:${profile.email}`} variant="button">Get in touch ↗</Link></nav>
+    </header>
+    <main id="main" tabindex="-1"><slot /></main>
+    <footer class="container site-footer"><span>João Navarro · {profile.location}</span><a href={profile.linkedin}>LinkedIn ↗</a><span>Built with care. Kept simple.</span></footer>
+  </body>
+</html>
+
+

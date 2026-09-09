@@ -1,0 +1,46 @@
+---
+import Badge from "../components/Badge.astro";
+import Flow from "../components/Flow.astro";
+import Link from "../components/Link.astro";
+import "../styles/global.css";
+
+const steps = [
+  { title: "Evidence", detail: "Capture an observable source, test, or build artifact." },
+  { title: "Decision", detail: "State the boundary, tradeoff, and protected rule." },
+  { title: "Outcome", detail: "Show the present status without inventing certainty." },
+] as const;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Portfolio primitives</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to primitives</a>
+    <main class="container" id="main">
+      <p class="eyebrow">Temporary QA route</p>
+      <h1 class="display">Portfolio primitives</h1>
+      <p class="lead">Token, interaction, and responsive-flow checks before page composition.</p>
+      <section aria-labelledby="links-title">
+        <h2 class="section-title" id="links-title">Links and status</h2>
+        <p><Link href="#flow">Inline evidence link</Link></p>
+        <nav aria-label="Primitive navigation"><Link href="#flow" variant="nav">Navigation link</Link></nav>
+        <p><Link href="#flow" variant="button">Case-study link</Link></p>
+        <p><Badge>Verified</Badge> <Badge tone="blue">In progress</Badge> <Badge tone="amber">Current limitation</Badge></p>
+      </section>
+      <section id="flow" aria-labelledby="flow-title">
+        <h2 class="section-title" id="flow-title">Evidence flow</h2>
+        <Flow steps={steps} caption="A real HTML figure: sequence communicates the protected architecture, not a simulated product screen." />
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  main { padding-block: var(--s12); }
+  section { border-top: 1px solid var(--line); margin-top: var(--s12); padding-top: var(--s8); }
+  nav { margin-block: var(--s4); }
+</style>

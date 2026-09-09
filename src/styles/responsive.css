@@ -1,0 +1,118 @@
+@media (max-width: 900px) {
+  .hero {
+    gap: var(--s10);
+    grid-template-columns: 1fr;
+    padding-block: var(--s12);
+  }
+  .work-index {
+    max-width: none;
+  }
+  .index-intro br {
+    display: none;
+  }
+  .index-note {
+    display: none;
+  }
+  .work-index ol {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--s5);
+  }
+  .work-index li:last-child {
+    border-bottom: 0;
+  }
+  .work-index li a {
+    grid-template-columns: 1fr;
+  }
+  .work-index li a > span:last-child {
+    display: none;
+  }
+  .project-row {
+    gap: var(--s8);
+  }
+  .site-header {
+    align-items: start;
+  }
+  .site-header nav {
+    gap: var(--s4);
+  }
+}
+@media (max-width: 767px) {
+  .site-header {
+    flex-direction: column;
+    gap: var(--s4);
+  }
+  .site-header nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: var(--s2);
+  }
+  .site-header nav .link--button {
+    padding-inline: var(--s3);
+  }
+  .hero .display {
+    font-size: clamp(44px, 8vw, 64px);
+  }
+  .section {
+    padding-block: var(--s12);
+  }
+  .section-heading {
+    display: block;
+  }
+  .section-heading > p {
+    margin-top: var(--s4);
+  }
+  .project-row,
+  .about,
+  .case-body,
+  .case-meta,
+  .additional-grid,
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: var(--s8);
+  }
+  .work-index ol {
+    display: block;
+  }
+  .work-index li a {
+    grid-template-columns: var(--s8) 1fr auto;
+    padding-block: var(--s3);
+  }
+  .work-index li a > span:last-child {
+    display: block;
+  }
+  .index-intro {
+    font-size: 28px;
+    margin-block: var(--s4);
+  }
+  .project-figure {
+    padding: var(--s4);
+  }
+  .project-row {
+    padding-block: var(--s8);
+  }
+  .site-footer {
+    gap: var(--s3);
+    flex-direction: column;
+  }
+  .case-header .display {
+    font-size: clamp(40px, 9vw, 64px);
+  }
+  .case-meta {
+    margin-block: var(--s8);
+  }
+  .case-study {
+    padding-top: var(--s6);
+  }
+  .back-link {
+    margin-bottom: var(--s8);
+  }
+  .capabilities-grid {
+    gap: var(--s8);
+  }
+  .case-next {
+    gap: var(--s4);
+    align-items: start;
+    flex-direction: column;
+  }
+}

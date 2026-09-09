@@ -1,0 +1,32 @@
+{
+  "name": "joao-navarro-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check",
+    "lint": "biome check .",
+    "test": "node scripts/verify.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/geist": "^5.2.6",
+    "@fontsource-variable/newsreader": "^5.2.6",
+    "astro": "^7.3.1",
+    "sharp": "^0.35.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@axe-core/playwright": "^4.10.2",
+    "@biomejs/biome": "^1.9.4",
+    "lighthouse": "^13.4.1",
+    "playwright": "^1.55.0",
+    "typescript": "^5.8.3"
+  },
+  "packageManager": "pnpm@12.3.4",
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}
