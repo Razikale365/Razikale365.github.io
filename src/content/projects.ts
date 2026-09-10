@@ -1,3 +1,5 @@
+import { fiscalBrain } from "./fiscal-brain";
+
 export type Project = {
   readonly slug: string;
   readonly number: string;
@@ -64,9 +66,10 @@ export const projects: readonly Project[] = [
       "Operational workflows are implemented. National health-system integrations require additional configuration, and production readiness has separate release requirements.",
     discussion: "Where should optimistic version checks end and transactional locking begin?",
   },
+  fiscalBrain,
   {
     slug: "regmais",
-    number: "02",
+    number: "03",
     name: "RegMais",
     domain: "Public-service regulation",
     headline: "Make allocation decisions visible before they become records.",
@@ -106,52 +109,6 @@ export const projects: readonly Project[] = [
     limitation:
       "The municipal-regulation workflows are implemented. Production operation requires environment configuration, release verification and authorization to handle real patient data.",
     discussion: "How do you make a batch operation understandable without hiding its consequences?",
-  },
-  {
-    slug: "study-os",
-    number: "03",
-    name: "Study OS",
-    domain: "Local-first study planning",
-    headline: "A local-first system needs a recovery plan.",
-    summary:
-      "A local-first study system with SQLite backups, integrity checks and validated portable archives, so study plans and history can be moved and recovered safely.",
-    status: "In development · public source",
-    tone: "amber",
-    stack: ["React / TypeScript", "Python / FastAPI", "SQLite"],
-    responsibility:
-      "Independent development of the local study workflows, API, data storage and recovery tooling.",
-    problem:
-      "Study planning and history need durable local records, and a local-first system must let a user move or recover their own data. The hard part is replacing an existing database without losing what is already there.",
-    architecture:
-      "A React client works against a local FastAPI service backed by SQLite. Portable archives carry a manifest and the database, so a study history can be moved between machines and restored on the other side.",
-    steps: [
-      { title: "Local records", detail: "Study plans · history" },
-      { title: "Validated archive", detail: "Manifest · checksum · integrity" },
-      { title: "Restore", detail: "Stage · back up · replace" },
-    ],
-    flowCaption:
-      "Recovery flow. An archive is validated before it is allowed to replace existing data.",
-    decisions: [
-      {
-        title: "Create a consistent database backup",
-        body: "Backups use the SQLite backup API rather than copying the live database file. An integrity check runs before a backup is accepted, and a partial backup is removed on failure.",
-      },
-      {
-        title: "Validate an archive before trusting it",
-        body: "Restore accepts only manifest.json and study-os.sqlite3 archive members. Unexpected fields, unsafe members, oversized entries, unsupported schema, and size or SHA256 mismatch are rejected, and the staged SQLite file is integrity-validated. The checksum detects corruption; it is not an authenticity or security guarantee.",
-      },
-      {
-        title: "Protect existing data during restore",
-        body: "Restore stages the archive first, backs up the current database, replaces the current database with the staged copy, and validates the replacement. A rollback copy remains available if replacement fails.",
-      },
-    ],
-    verification:
-      "Repository tests cover readable backups, round-trip restore, invalid archives leaving the destination unchanged, and rollback when replacement fails.",
-    limitation:
-      "In development. The local backup and restore workflow is implemented. The case study describes the current development revision linked here.",
-    discussion: "What must be checked before an import can replace a user's data?",
-    sourceHref:
-      "https://github.com/Razikale365/Diario-Questoes/tree/e26be60fa54c3075c72f23139863d9f296b971c4",
   },
 ];
 

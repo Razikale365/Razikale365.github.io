@@ -6,10 +6,10 @@ Reviewed 2026-09-09. Case studies describe inspected implementation, not measure
 | --- | --- | --- |
 | DispensaMais | Authorization/version checks before stock mutation; tenant-scoped idempotency; linked authorization, batch and stock-event records; integration test scenarios | Private implementation; architecture available for interview discussion |
 | RegMais | Allocation preview separated from confirmation; production configuration guards; history-aware deletion; tenant-isolation tests | Private implementation; genuine historical interface capture without patient records |
-| Study OS | SQLite backup API and integrity checks; portable archive validation; staged restore, pre-restore backup and rollback; backup/restore tests | Public development revision linked below |
+| Fiscal Brain | Asynchronous PDF ingestion; Qdrant vector retrieval; worker-owned Neo4j indexing; source/page provenance; model-role routing; retained synthetic demo artifacts rechecked against the PDF | Private local MVP; two-page synthetic demo, not production or answer-quality proof |
 | Bulldog | Authored semantic actions separate from presentation; versioned save validation | Private prototype; audio content incomplete |
 
-Study OS's case study links to the [audited public revision](https://github.com/Razikale365/Diario-Questoes/tree/e26be60fa54c3075c72f23139863d9f296b971c4). Its [portable archive implementation](https://github.com/Razikale365/Diario-Questoes/blob/e26be60fa54c3075c72f23139863d9f296b971c4/study_os_service/db/portable.py) supports the recovery narrative. Recheck the link when updating this case study.
+The flagship order is DispensaMais, Fiscal Brain, RegMais. Study OS was removed from the visible portfolio to keep the narrative focused. Bulldog remains further exploration. See [the Fiscal Brain evidence ledger](FISCAL_BRAIN_EVIDENCE.md) for source files, tests, artifact boundaries, screenshot provenance and unverified claims. The published synthetic PDF and evidence JSON contain no real legal material or personal records.
 
 Employment, language proficiency and professional experience are taken from João's existing résumé. Employer code was not inspected; the portfolio does not invent numerical outcomes or claim sole authorship of team work. The LangChain natural-language-to-SQL work is described as a prototype.
 

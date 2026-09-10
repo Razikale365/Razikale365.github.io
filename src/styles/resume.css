@@ -48,12 +48,12 @@
   }
   @page {
     size: A4;
-    margin: 13mm 15mm;
+    margin: 10mm 12mm;
   }
   body {
     background: white;
     font-size: 10pt;
-    line-height: 1.4;
+    line-height: 1.3;
   }
   .site-header,
   .site-footer,
@@ -68,49 +68,48 @@
   }
   .resume-page .display {
     font-size: 25pt;
-    margin: 0 0 6pt;
+    margin: 0 0 4pt;
   }
   .resume-page .eyebrow {
     display: none;
   }
   .resume-page .lead {
     font-size: 13pt;
-    margin-bottom: 6pt;
+    margin-bottom: 4pt;
   }
   .resume-page section {
-    margin-top: 12pt;
-    padding-top: 8pt;
+    margin-top: 8pt;
+    padding-top: 5pt;
+    break-inside: avoid;
   }
   .resume-page h2 {
     font-size: 14pt;
-    margin-bottom: 6pt;
+    margin-bottom: 4pt;
   }
   .resume-page h3 {
     font-size: 10pt;
+    margin-bottom: 1pt;
   }
   .resume-page p {
-    margin-bottom: 6pt;
+    margin-bottom: 4pt;
     max-width: none;
   }
   .resume-page li {
-    padding-bottom: 3pt;
+    padding-bottom: 2pt;
   }
   .resume-page ul {
     padding-left: 14pt;
-    margin-block: 5pt;
+    margin-block: 3pt;
   }
   .resume-page .small,
   .resume-contact {
     font-size: 9pt;
   }
   .resume-project {
-    margin-top: 8pt;
+    margin-top: 5pt;
   }
   a {
     color: inherit;
     text-decoration: none;
-  }
-  .resume-page section {
-    break-inside: avoid;
   }
 }

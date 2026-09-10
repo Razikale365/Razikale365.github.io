@@ -86,6 +86,23 @@
   margin-top: var(--s3);
   max-width: 75ch;
 }
+.evidence-desktop {
+  max-width: 791px;
+}
+.evidence-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 2.3fr) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--s8);
+}
+.evidence-mobile {
+  max-width: 320px;
+}
+@media (max-width: 768px) {
+  .evidence-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
 .case-next {
   display: flex;
   align-items: center;

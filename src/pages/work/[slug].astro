@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import regmaisImage from "../../assets/regmais-allocation.png";
 import Badge from "../../components/Badge.astro";
+import FiscalBrainEvidence from "../../components/FiscalBrainEvidence.astro";
 import Flow from "../../components/Flow.astro";
 import Link from "../../components/Link.astro";
 import { profile } from "../../content/profile";
@@ -20,11 +21,12 @@ const { project } = Astro.props;
     <a class="back-link" href="/#work">← All selected work</a>
     <header class="case-header"><p class="eyebrow">Case study {project.number} / {project.domain}</p><h1 class="display">{project.name}</h1><p class="lead case-deck">{project.headline}</p><Badge tone={project.tone}>{project.status}</Badge></header>
     <div class="case-meta"><div><p class="eyebrow">My contribution</p><p>{project.responsibility}</p></div><div><p class="eyebrow">Core stack</p><ul class="tech-list">{project.stack.map(item => <li>{item}</li>)}</ul></div></div>
-    <div class="case-body"><section><h2 class="section-title">The operational problem</h2><p class="lead">{project.problem}</p></section><aside class="evidence-note"><p class="eyebrow">Engineering question</p><p>{project.discussion}</p></aside></div>
+    <div class="case-body"><section><h2 class="section-title">The problem</h2><p class="lead">{project.problem}</p></section><aside class="evidence-note"><p class="eyebrow">Engineering question</p><p>{project.discussion}</p></aside></div>
     <section class="case-section"><p class="eyebrow">System structure</p><h2 class="section-title">A boundary worth making explicit.</h2><p>{project.architecture}</p><Flow steps={project.steps} caption={project.flowCaption} /></section>
-    <section class="case-section" aria-labelledby="decisions"><h2 class="section-title" id="decisions">Three decisions that matter</h2><div class="decision-list">{project.decisions.map((decision,index) => <article><span class="eyebrow">0{index+1}</span><div><h3>{decision.title}</h3><p>{decision.body}</p></div></article>)}</div></section>
+    <section class="case-section" aria-labelledby="decisions"><h2 class="section-title" id="decisions">Engineering decisions</h2><div class="decision-list">{project.decisions.map((decision,index) => <article><span class="eyebrow">0{index+1}</span><div><h3>{decision.title}</h3><p>{decision.body}</p></div></article>)}</div></section>
     {project.slug === 'regmais' && <figure class="interface-capture"><Image src={regmaisImage} alt="RegMais allocation preview showing that no compatible patient is waiting, and that the queue remains unchanged until confirmation." widths={[640,960,1280]} sizes="(max-width: 768px) 90vw, 1100px" format="webp" loading="lazy" /><figcaption class="small muted">Actual interface captured during earlier local QA. Empty allocation state; no patient records are shown. Portuguese is the product’s operating language.</figcaption></figure>}
     <section class="case-section case-body"><div><h2 class="section-title">Verification & current state</h2><p>{project.verification}</p><p class="muted">{project.limitation}</p></div>{project.sourceHref ? <aside class="evidence-note"><p class="eyebrow">Source access</p><p>This project’s source is public. Read the implementation directly.</p><Link href={project.sourceHref}>Read the source ↗</Link></aside> : <aside class="evidence-note"><p class="eyebrow">Source access</p><p>This project’s repository is private. I can discuss the architecture and implementation in an interview.</p><Link href={`mailto:${profile.email}?subject=${encodeURIComponent(`${project.name} project discussion`)}`}>Discuss this project ↗</Link></aside>}</section>
+    {project.slug === "fiscal-brain" && <FiscalBrainEvidence />}
     <nav class="case-next" aria-label="Other case studies"><p class="eyebrow">Keep exploring</p>{projects.filter(item => item.slug !== project.slug).map(item => <Link href={`/work/${item.slug}/`}>{item.name} →</Link>)}</nav>
   </article>
 </Base>

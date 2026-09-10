@@ -1,0 +1,35 @@
+{
+  "notice": "SYNTHETIC TEST CONTENT - NOT REAL BRAZILIAN LAW. Retained REST demo output; all rules and dates are fictional. Source text was checked against the two-page PDF during the portfolio audit. This is not a general answer-quality benchmark.",
+  "transport": "REST",
+  "demo_configuration": {
+    "provider": "ollama",
+    "model": "qwen3:8b",
+    "provenance": "Retained configuration and operator-reported run; model execution telemetry was not retained."
+  },
+  "score_semantics": "Retrieval ranking score. Vector similarity may be boosted by full-text overlap; not answer confidence.",
+  "response_text": "**Taxa Aurora: Conceitos Fundamentais**  \n- **Prazo de Vencimento (p. 1):** A Taxa Aurora é devida em **15 de março**, como uma \"conta mensal\" que precisa ser paga antes da data limite. Se o contribuinte não pagar até lá, pode haver multa (analogia: pagar um boleto antes do vencimento para evitar juros).  \n- **Limite de Isenção (p. 1):** A base de cálculo é isenta se for **até R$ 12.500**. É como um \"salário mínimo\" para tributação: se seu rendimento for abaixo desse valor, não paga a taxa (similar a um benefício fiscal).  \n- **Prazo para Recurso Administrativo (p. 1):** O contribuinte tem **17 dias** para contestar uma cobrança. É como um \"prazo legal\" para questionar uma decisão, similar ao direito de recurso em processos administrativos.  \n\n**Foco para Provas:**  \n- **Prazos críticos** (vencimento e recursos) são pontos comuns em provas.  \n- **Isenções** são frequentemente testadas em questões de tributação.  \n- **Analogias práticas** ajudam a fixar regras (ex.: \"conta mensal\" vs. \"salário mínimo\").  \n\n**Deseja ver conexões com outros temas, como tributação municipal ou direito administrativo?**",
+  "evidence_items": [
+    {
+      "citation": "Unknown — p. 1",
+      "source_path": "/data/courses/fiscal-brain-golden-demo.pdf",
+      "page_start": 1,
+      "page_end": 1,
+      "text": "Fiscal Brain Golden Demo Document\nSYNTHETIC TEST CONTENT - NOT REAL BRAZILIAN LAW\nThis document is a deliberately fictional and synthetic demonstration material created for the Fiscal Brain\nend-to-end integration test. None of the rules, rates, or dates below represent any real Brazilian tax or\nadministrative law.\nFor this synthetic demonstration, the fictional Taxa Aurora is due on March 15. Taxpayers must compute the\nbase amount and pay the Taxa Aurora before this deadline.\nThe fictional exemption threshold for the Taxa Aurora is R$ 12,500. If the taxable base is equal to or below\nthis amount, no Taxa Aurora is owed.\nThe fictional administrative appeal period is 17 days. A taxpayer who disagrees with an assessment must file\nan administrative appeal within 17 days of the assessment notice.\nThese values are deliberately fictional. They are used only to verify that Fiscal Brain can ingest, index,\nretrieve, and tutor from a real source document.\nUnique facts for retrieval verification:\n- Taxa Aurora due date: March 15\n- Exemption threshold: R$ 12,500\n- Administrative appeal period: 17 days\nPage 1",
+      "retrieval_method": "vector",
+      "score": 0.5040482,
+      "content_type": "text",
+      "audio_segments": []
+    },
+    {
+      "citation": "Unknown — p. 2",
+      "source_path": "/data/courses/fiscal-brain-golden-demo.pdf",
+      "page_start": 2,
+      "page_end": 2,
+      "text": "Fiscal Brain Golden Demo Document\nSYNTHETIC TEST CONTENT - NOT REAL BRAZILIAN LAW\nThis second page repeats the synthetic facts to give the retrieval engine more context.\nThis document is a deliberately fictional and synthetic demonstration material created for the Fiscal Brain\nend-to-end integration test. None of the rules, rates, or dates below represent any real Brazilian tax or\nadministrative law.\nFor this synthetic demonstration, the fictional Taxa Aurora is due on March 15. Taxpayers must compute the\nbase amount and pay the Taxa Aurora before this deadline.\nThe fictional exemption threshold for the Taxa Aurora is R$ 12,500. If the taxable base is equal to or below\nthis amount, no Taxa Aurora is owed.\nThe fictional administrative appeal period is 17 days. A taxpayer who disagrees with an assessment must file\nan administrative appeal within 17 days of the assessment notice.\nThese values are deliberately fictional. They are used only to verify that Fiscal Brain can ingest, index,\nretrieve, and tutor from a real source document.\nPage 2",
+      "retrieval_method": "vector",
+      "score": 0.39506763,
+      "content_type": "text",
+      "audio_segments": []
+    }
+  ]
+}

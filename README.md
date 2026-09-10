@@ -1,6 +1,6 @@
 # João Navarro — software engineering portfolio
 
-Static English portfolio focused on operational software, backend decisions and data integrity.
+Static English portfolio for a Full-Stack / Applied AI Engineer building operational software and document-intelligence systems. Selected work: DispensaMais, Fiscal Brain, RegMais.
 
 ## Run
 
@@ -24,11 +24,11 @@ npx pnpm test
 node scripts/lighthouse.mjs
 ```
 
-The browser checks cover all six pages at four widths, axe accessibility, overflow, console errors, internal links, keyboard navigation, PDF retrieval, narrow mobile and zoom. Evidence writes to ignored `output/`.
+The browser checks cover all six pages at six widths, axe accessibility, overflow, console errors, internal links, keyboard navigation, PDF retrieval, narrow mobile and zoom. Evidence writes to ignored `output/`.
 
 ## Content and architecture
 
-- `src/content/`: typed profile, résumé and project content.
+- `src/content/`: typed profile, résumé and project content, including the Fiscal Brain case.
 - `src/layouts/Base.astro`: shared semantic shell and metadata.
 - `src/pages/`: home, résumé, generated case studies, 404, robots and sitemap.
 - `src/components/`: links, badges and architecture flow.
@@ -45,3 +45,5 @@ No database, API keys, tracking, cookies, CMS, React runtime or third-party clie
 ## Deployment
 
 See `docs/DEPLOYMENT.md`. Prepared for GitHub Pages on the existing account. Publication is a separate authorized step; no remote was created by the local build task.
+
+If port 4322 is occupied, start the preview on another port and set `TEST_URL` to its actual URL before running browser checks, asset generation or Lighthouse.

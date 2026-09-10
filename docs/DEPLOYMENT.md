@@ -2,7 +2,7 @@
 
 The site is static. No backend, database, paid API or persistent process is needed in production.
 
-Recommended destination: a new public `Razikale365.github.io` repository under the existing GitHub account, published through GitHub Pages. This avoids a repository subpath and gives the stable intended URL `https://razikale365.github.io/`. This URL is a deployment target, not a claim of a live site.
+Configured destination: the existing `Razikale365/Razikale365.github.io` repository, using GitHub Pages. This avoids a repository subpath and gives the stable intended URL `https://razikale365.github.io/`. This URL is a deployment target, not a claim of a live site.
 
 ## Local workflow
 
@@ -12,6 +12,7 @@ Use Node 24 and pnpm (or `npx pnpm` where pnpm is not installed).
 npx pnpm install --frozen-lockfile
 npx pnpm lint
 npx pnpm typecheck
+$env:SITE_URL='https://razikale365.github.io'
 npx pnpm build
 npx pnpm preview --host 127.0.0.1 --port 4322
 ```
@@ -24,8 +25,8 @@ External publication requires João's authorization. Local implementation does n
 
 After authorization:
 
-1. Review all tracked/untracked files and make the initial portfolio commit.
-2. Create public repository `Razikale365/Razikale365.github.io` and push this repository's main branch. No project-source repositories change visibility.
+1. Review this local change set and authorize its commit and publication.
+2. Integrate the reviewed portfolio branch through the agreed workflow. A push to main triggers the existing Pages workflow; no project-source repository changes visibility.
 3. In GitHub repository Settings → Pages, select GitHub Actions as the build source.
 4. Run the prepared Deploy Pages workflow. It builds static output and uses the Pages OIDC deployment flow.
 5. Verify live URLs, canonical metadata, sitemap, social preview, PDF and Lighthouse after deployment. Local Lighthouse is not CDN/network evidence.
