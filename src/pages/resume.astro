@@ -5,13 +5,13 @@ import { projects } from "../content/projects";
 import { resume } from "../content/resume";
 import Base from "../layouts/Base.astro";
 ---
-<Base title="Résumé — João Navarro | Full-Stack Software Engineer" description="João Navarro’s software engineering experience, selected projects and technical capabilities.">
+<Base title="Résumé — João Navarro | Full-Stack / Applied AI Engineer" description="João Navarro’s full-stack and applied AI engineering experience: operational software, document intelligence and selected project evidence.">
   <article class="container resume-page">
     <div class="resume-actions"><a href="/">← Back to portfolio</a><Link href="/joao-navarro-resume.pdf" variant="button">Download résumé PDF ↓</Link></div>
     <header><p class="eyebrow">Résumé</p><h1 class="display">{profile.fullName}</h1><p class="lead">{profile.role}</p><p class="resume-contact">{profile.location} · <a href={`mailto:${profile.email}`}>{profile.email}</a><br /><a href={profile.linkedin}>linkedin.com/in/jp-dev-full-stack</a> · <a href={profile.github}>github.com/Razikale365</a></p></header>
     <section><h2>Profile</h2><p>{resume.summary}</p></section>
     <section><h2>Professional experience</h2><h3>{resume.experience.title} · {resume.experience.company}</h3><p class="small muted">{resume.experience.period}</p><ul>{resume.experience.points.map(point => <li>{point}</li>)}</ul></section>
-    <section><h2>Independent product development</h2>{projects.map(project => <div class="resume-project"><h3>{project.name}</h3><p>{project.summary} <span class="muted">{project.status}</span></p></div>)}</section>
+    <section><h2>Independent product development</h2>{projects.map(project => <div class="resume-project">{project.slug === "fiscal-brain" ? <><h3>{resume.fiscalBrain.title}</h3><ul>{resume.fiscalBrain.points.map(point => <li>{point}</li>)}</ul></> : <><h3>{project.name}</h3><p>{project.summary} <span class="muted">{project.status}</span></p></>}</div>)}</section>
     <section><h2>Technical capabilities</h2>{resume.capabilities.map(item => <p><strong>{item.title}:</strong> {item.detail}</p>)}</section>
     <section><h2>Languages</h2><p>{resume.languages}</p></section>
   </article>

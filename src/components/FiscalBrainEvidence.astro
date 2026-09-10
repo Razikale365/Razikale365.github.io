@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import ingestion from "../assets/fiscal-brain/ingestion-complete.webp";
+import mobile from "../assets/fiscal-brain/mobile-evidence.webp";
+import tutor from "../assets/fiscal-brain/tutor-evidence.webp";
+import Link from "./Link.astro";
+---
+<section class="case-section" aria-labelledby="golden-demo">
+  <p class="eyebrow">Recorded golden-path demo</p>
+  <h2 class="section-title" id="golden-demo">An answer with evidence you can inspect.</h2>
+  <p>The demo document is labeled <strong>“SYNTHETIC TEST CONTENT — NOT REAL BRAZILIAN LAW.”</strong> Every tax rule, amount and deadline in these captures is fictional. They test ingestion and provenance. The product interface is in Portuguese.</p>
+  <figure class="interface-capture evidence-desktop">
+    <a href={tutor.src} aria-label="Open the full-size Fiscal Brain answer and evidence capture"><Image src={tutor} alt="Recorded Tutor answer showing the fictional 17-day appeal period beside two PDF sources, pages 1 and 2, vector retrieval labels and ranking scores." widths={[480, 791]} sizes="(max-width: 900px) 90vw, 791px" format="webp" quality={90} loading="lazy" /></a>
+    <figcaption class="small muted">The saved answer, scrolled to the appeal passage, alongside both evidence items. Cropped from the real 1366 px browser capture; output is unchanged. Scores rank retrieved material, not answer confidence. Open the image to read it at full size.</figcaption>
+  </figure>
+  <div class="evidence-gallery">
+    <figure class="interface-capture">
+      <a href={ingestion.src} aria-label="Open the full-size Fiscal Brain completed ingestion capture"><Image src={ingestion} alt="Ingestion page history showing fiscal-brain-golden-demo.pdf with complete status." widths={[640, 1078]} sizes="(max-width: 768px) 90vw, 740px" format="webp" quality={90} loading="lazy" /></a>
+      <figcaption class="small muted">Completed job in the ingestion history. The retained job record reports two chunks and zero errors; the idle console is not a live processing trace.</figcaption>
+    </figure>
+    <figure class="interface-capture evidence-mobile">
+      <a href={mobile.src} aria-label="Open the full-size Fiscal Brain mobile evidence capture"><Image src={mobile} alt="At 390 px, the mobile evidence drawer exposes both synthetic PDF sources, their page numbers, vector method and retrieval scores." widths={[320, 390]} sizes="(max-width: 390px) 90vw, 320px" format="webp" quality={90} loading="lazy" /></a>
+      <figcaption class="small muted">Evidence remains accessible in the 390 px drawer. “Unknown” is the current discipline label for this flat-path synthetic source; its filename and page metadata are preserved.</figcaption>
+    </figure>
+  </div>
+  <p class="small"><Link href="/evidence/fiscal-brain-golden-demo.pdf">Inspect the synthetic source PDF ↗</Link><br /><Link href="/evidence/fiscal-brain-evidence.json">Inspect the recorded evidence JSON ↗</Link></p>
+</section>

@@ -26,6 +26,7 @@ Self-hosted Geist Sans, weights 400/500/600; Newsreader variable normal for disp
 - Flow: labeled figure with ordered steps, connecting rules and figcaption. Real HTML, one column on mobile; explicitly architecture rather than a screenshot.
 - EvidenceNote: aside with title and concise technical explanation, tinted surface.
 - CaseLayout: shared page shell + metadata, problem, decisions, diagram, validation/current state, next case navigation.
+- EvidenceCapture: genuine product screenshot inside the existing figure treatment, linked to full size. Explicit source and demo captions; no altered product output. Desktop capture max-width 791px; mobile capture max-width 320px. Secondary gallery uses a 2.3:1 grid, existing spacing tokens and a single column below 768px. These widths preserve screenshot text rather than stretch it.
 - Primitives are checked at mobile/tablet/desktop before product composition. Static primitives have no loading/error states. Links are checked for keyboard, focus, hover, active.
 
 ## 6. Motion & Interaction
@@ -36,3 +37,8 @@ Tonal paper → white and quiet 1px borders. Radius 4px buttons, 8px evidence pa
 
 ## 8. Accessibility Constraints & Accepted Debt
 Target WCAG 2.2 AA: keyboard reachable anchors, skip link, visible focus, 4.5:1 normal text, 3:1 large text, meaningful figure descriptions, one h1 per page, 44px main touch targets. Content available without JavaScript; 200% zoom and reduced motion supported. No consent banner because no tracking/cookies. No accepted accessibility debt.
+
+The Fiscal Brain case preserves the editorial system. Recruiters can skim the three project roles; technical reviewers can inspect the synthetic PDF, evidence JSON and full-size captures. Screenshot text is supplementary: semantic prose and downloadable text evidence explain the same claims. Fictional content is labeled before the captures. Crops remove unrelated history; labels and output remain unchanged.
+
+## 9. A4 print (résumé)
+The résumé is rendered to a single A4 page via `src/styles/resume.css` print rules. The tight-but-readable spacing uses: page margins `10mm 12mm`; body `10pt` with `line-height: 1.3`; display `25pt` with `4pt` bottom margin; lead `13pt` with `4pt` bottom; section `8pt` top margin and `5pt` padding; `h2` `14pt` with `4pt` bottom; `h3` `10pt` with `1pt` bottom; paragraphs `4pt` bottom; list items `2pt` padding; lists `3pt` vertical margin; project blocks `5pt`; contact/small `9pt`.

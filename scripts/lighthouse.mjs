@@ -1,7 +1,8 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import lighthouse from "lighthouse";
 import { chromium } from "playwright";
-const paths = ["/", "/work/dispensamais/", "/work/regmais/", "/work/study-os/", "/resume/"];
+const paths = ["/", "/work/dispensamais/", "/work/regmais/", "/work/fiscal-brain/", "/resume/"];
+const base = process.env.TEST_URL || "http://127.0.0.1:4322";
 const browser = await chromium.launch({
   channel: "chrome",
   headless: true,
@@ -33,7 +34,7 @@ try {
                 },
               }),
         };
-        const result = await lighthouse(`http://127.0.0.1:4322${path}`, flags);
+        const result = await lighthouse(`${base}${path}`, flags);
         if (!result) throw new Error("No Lighthouse result");
         const scores = Object.fromEntries(
           Object.entries(result.lhr.categories).map(([key, value]) => [
