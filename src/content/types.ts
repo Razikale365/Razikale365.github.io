@@ -65,6 +65,7 @@ export type SiteText = {
     /** Short, scannable proof points shown under the hero intro. */
     readonly proof: readonly string[];
     readonly explore: string;
+    readonly seeCases: string;
     readonly viewResume: string;
     readonly availability: string;
     readonly indexLabel: string;

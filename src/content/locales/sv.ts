@@ -16,19 +16,20 @@ export const sv: SiteText = {
   home: {
     title: "João Paulo Navarro — Fullstack-ingenjör / tillämpad AI",
     description:
-      "Fullstack- och AI-ingenjör på väg in i nordisk energi: öppen källkod för data från den nordiska balansmarknaden, ett vårdstyrningssystem i produktion och AI-svar som går att kontrollera.",
-    heroTitle: ["Pålitlig mjukvara.", "Från idé till drift."],
+      "Fullstack- och AI-ingenjör: backendsystem för vårdflöden i offentlig sektor, en AI-handledare vars svar anger sina källor och öppen källkod för nordiska energidata.",
+    heroTitle: ["Pålitliga system.", "Svar du kan\u00a0spåra."],
     intro:
-      "Jag heter João Paulo. Jag bygger mjukvara som kritisk verksamhet är beroende av: patienter når rätt vård, register förblir tillförlitliga och AI-svar går att kontrollera mot sina källor. Nu tar jag med mig det arbetssättet till nordiska energidata.",
+      "Jag heter João Paulo. Jag bygger backendsystem för arbetsflöden i offentlig sektor och en AI-handledare vars svar hänvisar till de sidor de bygger på. Nu tar jag med mig samma omsorg om dataintegritet till öppen källkod för nordiska energidata.",
     introDetail:
-      "Fem år av mjukvara i produktion, främst för offentlig sektor, med ansvar från datamodell till driftsättning. Byggt öppet för den nordiska energisektorn: nordic-balancing på PyPI och Nordic Balancing Watch.",
+      "Det som binder ihop arbetet: affärsregler som måste hålla, data som måste förbli konsekventa och svar som går att kontrollera.",
     proof: [
-      "nordic-balancing: nordiska energidata, på PyPI",
       "5 år med mjukvara i produktion",
       "System för vårdstyrning i produktion",
-      "3 system byggda från början till slut",
+      "Öppet nordiskt energibibliotek på PyPI",
+      "AI-svar kopplade till sina källsidor",
     ],
-    explore: "Utforska utvalda projekt",
+    explore: "Utforska verktygen för nordisk energi",
+    seeCases: "Se fallstudier i backend och AI",
     viewResume: "Visa CV ↗",
     availability: "Tillgänglig för flytt med visumsponsring",
     indexLabel: "Utvalda system",
@@ -68,9 +69,9 @@ export const sv: SiteText = {
       },
     ],
     openEyebrow: "01 / Nordisk energi, byggt öppet",
-    openTitle: "Nordiska energidata, byggt öppet.",
+    openTitle: "Nordiska energidata som är lättare att granska och använda.",
     openIntro:
-      "Öppet, live och granskningsbart arbete med den nordiska balansmarknaden: ett publicerat Pythonbibliotek som samlar data från Energinet, Fingrid, Svenska kraftnät, eSett och ENTSO-E i en gemensam modell med 15-minutersintervall i UTC; en webbplats som i realtid bevakar när datan dyker upp och vad som revideras i efterhand; och ett bidrag till entsoe-py, under granskning.",
+      "Nordiska balansdata kommer från fem källor, var och en med egna format, luckor och revideringar, och de öppna API:erna visar bara det senaste värdet. nordic-balancing samlar allt i en gemensam modell med 15-minutersintervall i UTC och låter ett saknat värde förbli saknat i stället för att fylla i det. Nordic Balancing Watch bygger på biblioteket och sparar varje version den ser, så att det går att spåra när ett pris först dök upp och vad som ändrades efteråt.",
     moreEyebrow: "04 / Fler utforskningar",
     moreTitle: "En bredare verktygslåda.",
     bulldog: {
@@ -85,13 +86,14 @@ export const sv: SiteText = {
     aboutLead: "Jag bygger mjukvara som verkliga organisationer använder varje dag.",
     aboutBody: [
       "På DemandaNet har jag sedan 2021 arbetat med arbetsflöden för skoladministration, migreringar av relationsdata och produktmoduler. Mina egna projekt för samma arbetssätt vidare till offentliga vårdtjänster och evidensbaserad dokumentintelligens.",
-      "Python, TypeScript och SQL binder ihop mycket av arbetet. Resten väljer jag utifrån problemet, människorna som använder mjukvaran och kostnaden för att underhålla den.",
+      "Python och PHP har varit en del av mitt arbete sedan början av min karriär: PHP är grunden i DemandaNets plattform, och jag arbetar också med Laravel. TypeScript och SQL står för mycket av resten, och övriga verktyg väljer jag utifrån problemet, människorna som använder mjukvaran och kostnaden för att underhålla den.",
     ],
     aboutLink: "Erfarenhet och CV →",
     contactEyebrow: "Låt oss prata om arbetet",
-    contactTitle: "Har du ett problem som är värt att bygga för?",
+    contactTitle:
+      "Behöver du hjälp med ett backendsystem, en dataintegration eller ett AI-verktyg med källförankrade svar?",
     contactLead:
-      "Jag söker roller inom fullstack, backend eller tillämpad AI, gärna inom energi, där tillförlitliga data och spårbara beslut spelar roll.",
+      "Berätta vad du bygger. Jag söker roller inom backend, fullstack och tillämpad AI, inom nordisk energi och utanför.",
     contactResume: "CV →",
     contactNote:
       "Bor i Brasilien. Flytande engelska, lär mig svenska. Tillgänglig för flytt med visumsponsring, eller för distansarbete.",
@@ -216,7 +218,7 @@ export const sv: SiteText = {
       resumeLine:
         "Apotekssystem som ger varje patient exakt det läkemedel och den mängd som är beviljad, med korrekt lager per batch.",
       summary:
-        "Säkerställer att varje patient får exakt det läkemedel och den mängd hen är behörig till, och håller apotekets lager korrekt ned till batchnivå, även vid nya försök och samtidiga ändringar.",
+        "Ett offentligt apotek måste ge varje patient exakt det hen är behörig till och hålla lagret korrekt ned till batchnivå. Jag byggde utlämningssystemet från början till slut. Varje utlämning kontrollerar behörighetens version innan lagret ändras och bär en idempotensnyckel, så att ett nytt försök känns igen i stället för att räknas som en ny utlämning.",
       status: "Byggt från början till slut · privat kodförråd",
       responsibility:
         "Utformat och byggt på egen hand, från början till slut: domänmodell, API, handläggargränssnitt och verifieringsflöden.",
@@ -256,7 +258,7 @@ export const sv: SiteText = {
       resumeLine:
         "Personligt AI-studieverktyg, använt dagligen: svaren hänvisar till exakt de stycken och sidor de bygger på.",
       summary:
-        "AI-studieverktyget jag byggde åt mig själv och använde dagligen inför mina prov. Det gör stora PDF-samlingar till en handledare vars svar kommer med de exakta stycken och sidor de bygger på, så att jag kunde kontrollera i stället för att lita blint.",
+        "Flytande chatbotsvar var till ingen nytta när jag pluggade inför prov om jag inte kunde kontrollera dem. Jag byggde en personlig AI-handledare för mitt eget PDF-bibliotek och använde den dagligen. Varje hämtat stycke behåller sin fil och sida ända fram till svaret, så att varje svar kan kontrolleras mot dokumentet.",
       status: "Personligt verktyg · använt dagligen",
       responsibility:
         "Utformat, byggt och använt dagligen: dokumentinläsning, sökning, modellintegration och Tutor-gränssnittet, allt på min egen hårdvara.",
@@ -297,7 +299,7 @@ export const sv: SiteText = {
       resumeLine:
         "Styrningssystem som för patienter från väntelistan till rätt specialistmottagning efter specialitet, prioritet och väntetid.",
       summary:
-        "För patienter från väntelistan till rätt specialistmottagning genom att matcha behov mot tillgänglig kapacitet efter specialitet, prioritet och väntetid, med varje tilldelning synlig innan den bekräftas.",
+        "Personal i offentlig sektor måste matcha en väntelista till specialistvård mot begränsad mottagningskapacitet. Jag byggde systemet som föreslår tilldelningar efter specialitet, prioritet och väntetid. Förslaget är bara en förhandsvisning: inget ändras i patientuppgifterna förrän handläggaren bekräftar.",
       status: "I produktion",
       responsibility:
         "Utformat, byggt och satt i produktion på egen hand enligt kundens specifikation: multi-tenant-arbetsflöden, webbgränssnittet och skydd vid driftsättning.",
@@ -338,7 +340,7 @@ export const sv: SiteText = {
       name: "nordic-balancing",
       domain: "Pythonbibliotek med öppen källkod",
       description:
-        "En Python-klient för nordiska data om balansering och obalans i elsystemet från Energinet, Fingrid, Svenska kraftnät, eSett och ENTSO-E, normaliserade till 15-minutersintervall i UTC. Öppet och installerbart från PyPI.",
+        "Datalagret: typade Python-klienter för balans- och obalansdata från Energinet, Fingrid, Svenska kraftnät, eSett och ENTSO-E, i 15-minutersintervall i UTC. Ett värde som källan inte har publicerat förblir tomt, aldrig noll, och två källor kan stämmas av mot varandra när de skiljer sig åt. Installerbart från PyPI.",
       resumeLine:
         "Pythonbibliotek med öppen källkod för nordiska balans- och obalansdata i 15-minutersintervall (UTC); på PyPI (v0.4.0).",
       linkLabels: ["Källkod", "PyPI v0.4.0"],
@@ -347,7 +349,7 @@ export const sv: SiteText = {
       name: "Nordic Balancing Watch",
       domain: "Bevakning i realtid",
       description:
-        "Bevakar när data från den nordiska balansmarknaden dyker upp hos varje källa och vad som revideras i efterhand.",
+        "Byggd på nordic-balancing: en insamlare hämtar data från källorna och sparar varje prisversion den ser; webbplatsen visar när varje pris först dök upp, per zon och källa, och vad som reviderades efteråt. Insamlingen började i oktober 2026, så historiken är ännu kort.",
       resumeLine:
         "Webbplats som i realtid bevakar när nordiska balansdata dyker upp hos varje källa och vad som revideras i efterhand.",
       linkLabels: ["Besök webbplatsen"],

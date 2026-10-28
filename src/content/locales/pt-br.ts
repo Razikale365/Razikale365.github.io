@@ -16,19 +16,20 @@ export const ptBr: SiteText = {
   home: {
     title: "João Paulo Navarro — Engenheiro Full-Stack / IA Aplicada",
     description:
-      "Engenheiro full-stack e de IA aplicada a caminho do setor de energia nórdico: ferramentas open source para dados do mercado nórdico de balanceamento, um sistema de regulação em saúde em produção e respostas de IA verificáveis.",
-    heroTitle: ["Software confiável.", "Da ideia à produção."],
+      "Engenheiro full-stack e de IA aplicada: sistemas de backend para processos de saúde do setor público, um tutor de IA cujas respostas citam as fontes e ferramentas open source para dados de energia nórdicos.",
+    heroTitle: ["Sistemas confiáveis.", "Respostas rastreáveis."],
     intro:
-      "Sou o João Paulo. Construo software de que operações críticas dependem: pacientes chegam ao atendimento certo, os registros continuam confiáveis e as respostas de IA podem ser conferidas na fonte. Agora levo essa disciplina aos dados de energia nórdicos.",
+      "Sou o João Paulo. Desenvolvo sistemas de backend para processos do setor público e um tutor de IA cujas respostas citam as páginas em que se apoiam. Hoje, levo esse mesmo cuidado com a integridade dos dados para software open source voltado à energia nórdica.",
     introDetail:
-      "Cinco anos entregando software em produção, principalmente para o setor público, de ponta a ponta, do modelo de dados à implantação. Em código aberto para o setor de energia nórdico: nordic-balancing no PyPI e o Nordic Balancing Watch.",
+      "O que liga esses trabalhos: regras de negócio que precisam ser respeitadas, dados que precisam permanecer consistentes e respostas que podem ser conferidas.",
     proof: [
-      "nordic-balancing: dados de energia nórdicos, no PyPI",
       "5 anos entregando software em produção",
       "Sistema de regulação em saúde em produção",
-      "3 sistemas construídos de ponta a ponta",
+      "Biblioteca open source de energia nórdica no PyPI",
+      "Respostas de IA ligadas às páginas de origem",
     ],
-    explore: "Ver projetos selecionados",
+    explore: "Explorar as ferramentas de energia nórdica",
+    seeCases: "Ver os casos de backend e IA",
     viewResume: "Ver currículo ↗",
     availability: "Disponível para mudança, com patrocínio de visto",
     indexLabel: "Sistemas selecionados",
@@ -68,9 +69,9 @@ export const ptBr: SiteText = {
       },
     ],
     openEyebrow: "01 / Energia nórdica, em código aberto",
-    openTitle: "Dados de energia nórdicos, construídos em público.",
+    openTitle: "Dados de energia nórdicos mais fáceis de inspecionar e usar.",
     openIntro:
-      "Trabalho aberto, no ar e verificável sobre o mercado nórdico de balanceamento: uma biblioteca Python publicada que reúne dados da Energinet, Fingrid, Svenska kraftnät, eSett e ENTSO-E em um único modelo de 15 minutos em UTC; um site ao vivo que acompanha quando esses dados aparecem e o que é revisado depois; e uma contribuição ao entsoe-py, em revisão.",
+      "Os dados nórdicos de balanceamento vêm de cinco fontes, cada uma com seus formatos, lacunas e revisões, e as APIs públicas mostram só o valor mais recente. A nordic-balancing reúne tudo em um único modelo de 15 minutos em UTC e deixa um valor ausente como ausente, sem preenchê-lo. O Nordic Balancing Watch roda sobre essa biblioteca e guarda cada versão que encontra, para que se possa rastrear quando um preço apareceu pela primeira vez e o que mudou depois.",
     moreEyebrow: "04 / Outras explorações",
     moreTitle: "Um repertório de engenharia mais amplo.",
     bulldog: {
@@ -85,13 +86,14 @@ export const ptBr: SiteText = {
     aboutLead: "Construo software que organizações reais usam todos os dias.",
     aboutBody: [
       "Na DemandaNet, trabalho desde 2021 com fluxos de gestão educacional, migrações de dados relacionais e módulos de produto. Meus projetos independentes levam essa prática para serviços públicos de saúde e inteligência documental baseada em evidências.",
-      "Python, TypeScript e SQL conectam boa parte desse trabalho. O restante escolho de acordo com o problema, as pessoas que usam o software e o custo de mantê-lo.",
+      "Python e PHP fazem parte do meu trabalho desde o início da carreira: PHP é a base da plataforma da DemandaNet, e também trabalho com Laravel. TypeScript e SQL cobrem boa parte do resto, e escolho as demais ferramentas de acordo com o problema, as pessoas que usam o software e o custo de mantê-lo.",
     ],
     aboutLink: "Experiência e currículo →",
     contactEyebrow: "Vamos conversar sobre o trabalho",
-    contactTitle: "Tem um problema que vale a pena resolver?",
+    contactTitle:
+      "Precisa de ajuda com um sistema de backend, uma integração de dados ou uma ferramenta de IA com respostas vinculadas às fontes?",
     contactLead:
-      "Busco vagas full-stack, de backend ou de IA aplicada, especialmente em energia, onde dados confiáveis e decisões rastreáveis fazem diferença.",
+      "Me conte o que você está construindo. Busco vagas de backend, full-stack e IA aplicada, em energia nórdica e além.",
     contactResume: "Currículo →",
     contactNote:
       "No Brasil. Inglês fluente, aprendendo sueco. Disponível para mudança com patrocínio de visto, ou para trabalho remoto.",
@@ -216,7 +218,7 @@ export const ptBr: SiteText = {
       resumeLine:
         "Sistema de farmácia que entrega a cada paciente exatamente o medicamento e a quantidade autorizados, com estoque preciso por lote.",
       summary:
-        "Garante que cada paciente receba exatamente o medicamento e a quantidade autorizados, mantendo o estoque da farmácia correto até o nível do lote, mesmo com novas tentativas e edições simultâneas.",
+        "Uma farmácia pública precisa entregar a cada paciente exatamente o que ele está autorizado a receber e manter o estoque correto até o lote. Construí o sistema de dispensação de ponta a ponta. Cada dispensação confere a versão da autorização antes de movimentar o estoque e leva uma chave de idempotência, para que uma nova tentativa seja reconhecida em vez de contada como nova dispensação.",
       status: "Construído de ponta a ponta · repositório privado",
       responsibility:
         "Projetado e construído de forma independente, de ponta a ponta: modelo de domínio, API, interface operacional e fluxos de verificação.",
@@ -258,7 +260,7 @@ export const ptBr: SiteText = {
       resumeLine:
         "Ferramenta pessoal de estudo com IA, usada diariamente: as respostas citam os trechos e as páginas em que se apoiam.",
       summary:
-        "A ferramenta de estudo com IA que construí para mim e usei todos os dias na preparação para concursos. Ela transforma grandes coleções de PDFs em um tutor cujas respostas vêm com os trechos e as páginas exatas em que se apoiam, para eu verificar em vez de confiar às cegas.",
+        "Respostas fluentes de chatbot não serviam para estudar para concursos se eu não pudesse conferi-las. Construí um tutor de IA pessoal sobre minha própria biblioteca de PDFs e o usei todos os dias. Cada trecho recuperado mantém o arquivo e a página até a resposta, para que toda resposta possa ser conferida no documento.",
       status: "Ferramenta pessoal · uso diário",
       responsibility:
         "Projetado, construído e usado diariamente: ingestão de documentos, recuperação, integração com modelos e a interface do Tutor, tudo rodando no meu próprio hardware.",
@@ -300,7 +302,7 @@ export const ptBr: SiteText = {
       resumeLine:
         "Sistema de regulação que leva pacientes da fila à consulta especializada certa, por especialidade, prioridade e tempo de espera.",
       summary:
-        "Leva o paciente da fila de espera à consulta especializada certa, cruzando a demanda com a capacidade disponível por especialidade, prioridade e tempo de espera, com cada alocação transparente antes da confirmação.",
+        "Equipes do setor público precisam cruzar a fila de espera por especialistas com uma capacidade limitada de consultas. Construí o sistema que propõe alocações por especialidade, prioridade e tempo de espera. A proposta é só uma pré-visualização: nada muda nos registros dos pacientes até o operador confirmar.",
       status: "Em produção",
       responsibility:
         "Projetado, construído e levado à produção de forma independente, conforme a especificação do cliente: fluxos multi-tenant, a interface web e salvaguardas de implantação.",
@@ -344,7 +346,7 @@ export const ptBr: SiteText = {
       name: "nordic-balancing",
       domain: "Biblioteca Python de código aberto",
       description:
-        "Um cliente Python para dados de balanceamento e desequilíbrio do setor elétrico nórdico, da Energinet, Fingrid, Svenska kraftnät, eSett e ENTSO-E, normalizados em intervalos de 15 minutos em UTC. Público e instalável pelo PyPI.",
+        "A camada de dados: clientes Python tipados para dados de balanceamento e desequilíbrio da Energinet, Fingrid, Svenska kraftnät, eSett e ENTSO-E, em intervalos de 15 minutos em UTC. Um valor que a fonte não publicou fica vazio, nunca zero, e duas fontes podem ser conciliadas quando divergem. Instalável pelo PyPI.",
       resumeLine:
         "Biblioteca Python de código aberto para dados nórdicos de balanceamento e desequilíbrio (15\u00a0min, UTC); no PyPI (v0.4.0).",
       linkLabels: ["Código-fonte", "PyPI v0.4.0"],
@@ -353,7 +355,7 @@ export const ptBr: SiteText = {
       name: "Nordic Balancing Watch",
       domain: "Site de acompanhamento ao vivo",
       description:
-        "Acompanha quando os dados do mercado nórdico de balanceamento aparecem em cada fonte e o que é revisado depois.",
+        "Construído sobre a nordic-balancing: um coletor consulta as fontes e guarda cada versão de preço que encontra; o site mostra quando cada preço apareceu pela primeira vez, por zona e fonte, e o que foi revisado depois. A coleta começou em outubro de 2026, então o histórico ainda é curto.",
       resumeLine:
         "Site ao vivo que acompanha quando os dados nórdicos de balanceamento aparecem em cada fonte e o que é revisado depois.",
       linkLabels: ["Visitar o site"],
