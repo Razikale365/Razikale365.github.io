@@ -45,6 +45,42 @@
   background: var(--paper);
   font-family: "Geist Variable", Arial, sans-serif;
   font-synthesis: none;
+  color-scheme: light;
+}
+/* Dark theme: follows the system unless the header toggle stored a choice. Screen only, so print stays light. */
+@media screen {
+  :root[data-theme="dark"] {
+    --paper: #161a17;
+    --surface: #1f2420;
+    --ink: #e8ebe6;
+    --muted: #a6aea5;
+    --line: #363d37;
+    --accent: #82c7a4;
+    --accent-hover: #a9dcc1;
+    --tint: #22352b;
+    --blue: #9fc6e6;
+    --blue-tint: #1d2a35;
+    --amber: #e2c07f;
+    --amber-tint: #332a1a;
+    color-scheme: dark;
+  }
+}
+@media screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #161a17;
+    --surface: #1f2420;
+    --ink: #e8ebe6;
+    --muted: #a6aea5;
+    --line: #363d37;
+    --accent: #82c7a4;
+    --accent-hover: #a9dcc1;
+    --tint: #22352b;
+    --blue: #9fc6e6;
+    --blue-tint: #1d2a35;
+    --amber: #e2c07f;
+    --amber-tint: #332a1a;
+    color-scheme: dark;
+  }
 }
 
 * {

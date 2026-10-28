@@ -112,4 +112,7 @@
     color: inherit;
     text-decoration: none;
   }
+  .resume-page section a {
+    white-space: nowrap;
+  }
 }

@@ -1,5 +1,9 @@
 ---
+import Lines from "../components/Lines.astro";
 import Link from "../components/Link.astro";
+import { getText } from "../content/index";
 import Base from "../layouts/Base.astro";
+// GitHub Pages serves one 404 page for every path, so it stays in the default language.
+const t = getText("en").notFound;
 ---
-<Base title="Page not found — João Navarro" description="Return to João Navarro’s software engineering portfolio." noindex><section class="container section not-found"><p class="eyebrow">404 / Page not found</p><h1 class="display">Let’s get you back<br />to the work.</h1><p>The page may have moved or the address may be incomplete.</p><Link href="/" variant="button">Return to the portfolio →</Link></section></Base>
+<Base title={t.title} description={t.description} locale="en" path="/" noindex><section class="container section not-found"><p class="eyebrow">{t.eyebrow}</p><h1 class="display"><Lines lines={t.heading} /></h1><p>{t.body}</p><Link href="/" variant="button">{t.back}</Link></section></Base>

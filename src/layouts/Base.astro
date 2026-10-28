@@ -2,32 +2,51 @@
 import geistFont from "@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url";
 import newsreaderFont from "@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2?url";
 import Link from "../components/Link.astro";
+import { getText } from "../content/index";
 import { profile } from "../content/profile";
+import { type Locale, localeMeta, localePath, locales } from "../i18n/locales";
 import "../styles/global.css";
 import "../styles/site.css";
 interface Props {
   readonly title: string;
   readonly description: string;
+  readonly locale: Locale;
+  /** Locale-neutral path of this page ("/resume/"); the language switcher links to it in each locale. */
+  readonly path: string;
   readonly noindex?: boolean;
 }
-const { title, description, noindex = false } = Astro.props;
+const { title, description, locale, path, noindex = false } = Astro.props;
+const t = getText(locale).shell;
+const meta = localeMeta[locale];
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
 const image = Astro.site ? new URL("/og.png", Astro.site) : undefined;
+const alternates =
+  Astro.site && !noindex
+    ? locales.map((item) => ({
+        hreflang: localeMeta[item].htmlLang,
+        href: new URL(localePath(item, path), Astro.site).href,
+      }))
+    : [];
 ---
 <!doctype html>
-<html lang="en">
+<html lang={meta.htmlLang}>
   <head>
     <meta charset="UTF-8" /><link rel="preload" href={geistFont} as="font" type="font/woff2" crossorigin /><link rel="preload" href={newsreaderFont} as="font" type="font/woff2" crossorigin />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#f7f6f2" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#161a17" media="(prefers-color-scheme: dark)" />
     {noindex && <meta name="robots" content="noindex, follow" />}
     {canonical && <link rel="canonical" href={canonical} />}
+    {alternates.map((item) => <link rel="alternate" hreflang={item.hreflang} href={item.href} />)}
+    {Astro.site && !noindex && <link rel="alternate" hreflang="x-default" href={new URL(path, Astro.site).href} />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={meta.ogLocale} />
     {canonical && <meta property="og:url" content={canonical} />}
     {image && <meta property="og:image" content={image} />}
     {image && <meta property="og:image:width" content="1200" />}
@@ -37,14 +56,34 @@ const image = Astro.site ? new URL("/og.png", Astro.site) : undefined;
     <link rel="sitemap" href="/sitemap.xml" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">{t.skip}</a>
     <header class="site-header container">
-      <a class="identity" href="/"><span class="monogram" aria-hidden="true">jn.</span><span>João Navarro<span class="identity-role">Software engineer</span></span></a>
-      <nav aria-label="Main navigation"><Link href="/#work" variant="nav">Work</Link><Link href="/resume/" variant="nav">Résumé</Link><Link href={profile.github} variant="nav">GitHub ↗</Link><Link href={`mailto:${profile.email}`} variant="button">Get in touch ↗</Link></nav>
+      <a class="identity" href={localePath(locale)}><span class="monogram" aria-hidden="true">jn.</span><span>João Paulo Navarro<span class="identity-role">{t.identityRole}</span></span></a>
+      <nav aria-label={t.mainNav}><Link href={`${localePath(locale)}#work`} variant="nav">{t.work}</Link><Link href={localePath(locale, "/resume/")} variant="nav">{t.resume}</Link><Link href={profile.github} variant="nav">GitHub ↗</Link><Link href={`${localePath(locale)}#contact`} variant="button">{t.contact}</Link></nav>
+      <div class="site-tools">
+        <nav class="lang-switch" aria-label={t.languageNav}>{locales.map((item) => <a href={localePath(item, path)} hreflang={localeMeta[item].htmlLang} lang={localeMeta[item].htmlLang} title={localeMeta[item].name} aria-current={item === locale ? "page" : undefined}>{localeMeta[item].label}</a>)}</nav>
+        <button class="theme-toggle" type="button" aria-label={t.darkTheme} aria-pressed="false" hidden><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6" /><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor" /></svg></button>
+      </div>
     </header>
     <main id="main" tabindex="-1"><slot /></main>
-    <footer class="container site-footer"><span>João Navarro · {profile.location}</span><a href={profile.linkedin}>LinkedIn ↗</a><span>Built with care. Kept simple.</span></footer>
+    <footer class="container site-footer"><span>João Paulo Navarro · {getText(locale).profile.location}</span><a href={profile.linkedin}>LinkedIn ↗</a><span>{t.footer}</span></footer>
+    <script is:inline>
+      (() => {
+        const root = document.documentElement;
+        const button = document.querySelector(".theme-toggle");
+        const system = matchMedia("(prefers-color-scheme: dark)");
+        const isDark = () => (root.dataset.theme ? root.dataset.theme === "dark" : system.matches);
+        const sync = () => button.setAttribute("aria-pressed", String(isDark()));
+        button.hidden = false;
+        sync();
+        system.addEventListener("change", sync);
+        button.addEventListener("click", () => {
+          const next = isDark() ? "light" : "dark";
+          root.dataset.theme = next;
+          try { localStorage.setItem("theme", next); } catch {}
+          sync();
+        });
+      })();
+    </script>
   </body>
 </html>
-
-

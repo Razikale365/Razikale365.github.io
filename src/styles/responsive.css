@@ -44,8 +44,12 @@
   }
   .site-header nav {
     width: 100%;
+    margin-left: 0;
     justify-content: space-between;
     gap: var(--s2);
+  }
+  .site-header .lang-switch {
+    width: auto;
   }
   .site-header nav .link--button {
     padding-inline: var(--s3);

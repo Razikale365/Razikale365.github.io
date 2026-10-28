@@ -3,14 +3,13 @@ import { mkdir, writeFile } from "node:fs/promises";
 import AxeBuilder from "@axe-core/playwright";
 import { chromium } from "playwright";
 const base = process.env.TEST_URL || "http://127.0.0.1:4322";
+const localized = ["/", "/work/dispensamais/", "/work/regmais/", "/work/fiscal-brain/", "/resume/"];
+const prefixes = ["", "/pt-br", "/sv"];
 const paths = [
-  "/",
-  "/work/dispensamais/",
-  "/work/regmais/",
-  "/work/fiscal-brain/",
-  "/resume/",
+  ...prefixes.flatMap((prefix) => localized.map((path) => `${prefix}${path}`)),
   "/404.html",
 ];
+const htmlLang = { "": "en", "/pt-br": "pt-BR", "/sv": "sv" };
 const dir = "output/playwright/final";
 await mkdir(dir, { recursive: true });
 const browser = await chromium.launch({ channel: "chrome", headless: true });
@@ -41,6 +40,12 @@ try {
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth);
       assert.equal(overflow, false, `${path} overflows at ${width}`);
       assert.equal(await page.locator("h1").count(), 1);
+      const prefix = prefixes.find((item) => item && path.startsWith(`${item}/`)) ?? "";
+      assert.equal(await page.locator("html").getAttribute("lang"), htmlLang[prefix]);
+      assert.equal(
+        await page.locator('.lang-switch a[aria-current="page"]').getAttribute("hreflang"),
+        htmlLang[prefix],
+      );
       assert.equal(
         await page.locator('link[rel="canonical"]').getAttribute("href"),
         `https://razikale365.github.io${path === "/404.html" ? "/404/" : path}`,
@@ -80,10 +85,10 @@ try {
   }
   const page = await browser.newPage({ viewport: { width: 375, height: 900 } });
   await page.goto(base);
-  const flagshipPaths = ["/work/dispensamais/", "/work/fiscal-brain/", "/work/regmais/"];
+  const flagshipPaths = ["/work/regmais/", "/work/dispensamais/", "/work/fiscal-brain/"];
   assert.deepEqual(
     await page
-      .locator(".work-index li a")
+      .locator(".work-index ol li a")
       .evaluateAll((nodes) => nodes.map((node) => node.getAttribute("href"))),
     flagshipPaths,
   );
@@ -93,7 +98,12 @@ try {
   const locations = [...(await sitemap.text()).matchAll(/<loc>([^<]+)<[/]loc>/g)].map(
     (match) => new URL(match[1]).pathname,
   );
-  assert.deepEqual(locations, ["/", "/resume/", ...flagshipPaths]);
+  assert.deepEqual(
+    locations,
+    prefixes.flatMap((prefix) =>
+      ["/", "/resume/", ...flagshipPaths].map((path) => `${prefix}${path}`),
+    ),
+  );
   assert.equal((await page.request.get(`${base}/work/study-os/`)).status(), 404);
   const demo = await page.request.get(`${base}/evidence/fiscal-brain-evidence.json`);
   assert.equal(demo.status(), 200);
@@ -118,7 +128,7 @@ try {
   assert.equal(
     await page
       .getByRole("heading", {
-        name: "Fiscal Brain — Applied AI / Document Intelligence",
+        name: "Fiscal Brain — personal AI study tool, used daily",
         exact: true,
       })
       .count(),
@@ -126,9 +136,31 @@ try {
   );
   assert.equal(await page.getByText("June 2021–present", { exact: true }).count(), 1);
   assert.equal(await page.getByText("Study OS", { exact: true }).count(), 0);
-  const pdf = await page.request.get(`${base}/joao-navarro-resume.pdf`);
-  assert.equal(pdf.status(), 200);
-  assert.equal((await pdf.body()).subarray(0, 5).toString(), "%PDF-");
+  for (const file of ["", "-pt-br", "-sv"]) {
+    const pdf = await page.request.get(`${base}/joao-navarro-resume${file}.pdf`);
+    assert.equal(pdf.status(), 200);
+    assert.equal((await pdf.body()).subarray(0, 5).toString(), "%PDF-");
+  }
+  // Language switcher keeps the current page; each locale shows its own education line.
+  await page.getByRole("link", { name: "PT-BR", exact: true }).click();
+  assert.equal(new URL(page.url()).pathname, "/pt-br/resume/");
+  assert.equal(await page.getByText("Tecnólogo em IA Aplicada · PUCPR").count(), 1);
+  await page.getByRole("link", { name: "SV", exact: true }).click();
+  assert.equal(new URL(page.url()).pathname, "/sv/resume/");
+  assert.equal(await page.getByText("Tecnólogo i tillämpad AI (IA aplicada) · PUCPR").count(), 1);
+  await page.getByRole("link", { name: "EN", exact: true }).click();
+  assert.equal(new URL(page.url()).pathname, "/resume/");
+  // Theme toggle: follows the system by default, persists an explicit choice across pages.
+  const toggle = page.locator(".theme-toggle");
+  assert.equal(await toggle.getAttribute("aria-pressed"), "false");
+  await toggle.click();
+  assert.equal(await page.locator("html").getAttribute("data-theme"), "dark");
+  assert.equal(await toggle.getAttribute("aria-pressed"), "true");
+  await page.goto(`${base}/sv/`);
+  assert.equal(await page.locator("html").getAttribute("data-theme"), "dark");
+  await page.locator(".theme-toggle").click();
+  assert.equal(await page.locator("html").getAttribute("data-theme"), "light");
+  await page.goto(`${base}/resume/`);
   for (const href of links) {
     const url = new URL(href);
     if (url.origin !== new URL(base).origin) continue;
@@ -143,6 +175,31 @@ try {
       );
     }
   }
+  // Dark theme passes the same accessibility checks on every page.
+  const dark = await browser.newContext({
+    viewport: { width: 1280, height: 900 },
+    colorScheme: "dark",
+    reducedMotion: "reduce",
+  });
+  const darkPage = await dark.newPage();
+  for (const path of paths) {
+    await darkPage.goto(`${base}${path}`);
+    assert.equal(await darkPage.locator(".theme-toggle").getAttribute("aria-pressed"), "true");
+    const audit = await new AxeBuilder({ page: darkPage })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    assert.deepEqual(
+      audit.violations.map((item) => ({
+        id: item.id,
+        nodes: item.nodes.map((node) => node.target),
+      })),
+      [],
+      `${path} dark-theme accessibility`,
+    );
+  }
+  await darkPage.goto(base);
+  await darkPage.screenshot({ path: `${dir}/home-dark-1280.png`, fullPage: true });
+  await dark.close();
   await page.setViewportSize({ width: 320, height: 900 });
   await page.goto(base);
   assert.equal(
@@ -171,6 +228,9 @@ try {
         keyboard: "PASS",
         navigation: "PASS",
         pdf: "PASS",
+        languages: "PASS",
+        theme: "PASS",
+        darkAccessibility: "PASS",
         sitemap: "PASS",
         flagshipOrder: "PASS",
         metadata: "PASS",
@@ -184,7 +244,7 @@ try {
     ),
   );
   console.log(
-    `PASS: ${report.length} route/viewport combinations, axe, console, links, keyboard, navigation, PDF, 320px and 200% zoom.`,
+    `PASS: ${report.length} route/viewport combinations, dark-theme axe, axe, console, links, keyboard, navigation, languages, theme, PDFs, 320px and 200% zoom.`,
   );
 } finally {
   await browser.close();

@@ -1,0 +1,8 @@
+---
+/** Renders text lines separated by <br />, for headings whose line breaks are part of the design. */
+interface Props {
+  readonly lines: readonly string[];
+}
+const { lines } = Astro.props;
+---
+{lines.map((line, index) => <>{index > 0 && <br />}{line}</>)}

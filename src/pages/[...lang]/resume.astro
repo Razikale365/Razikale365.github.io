@@ -1,0 +1,30 @@
+---
+import Link from "../../components/Link.astro";
+import { getText } from "../../content/index";
+import { getOpenWork } from "../../content/open-work";
+import { profile } from "../../content/profile";
+import { getProjects } from "../../content/projects";
+import { type Locale, localeParams, localePath, resumePdf } from "../../i18n/locales";
+import Base from "../../layouts/Base.astro";
+export const getStaticPaths = localeParams;
+interface Props {
+  readonly locale: Locale;
+}
+const { locale } = Astro.props;
+const text = getText(locale);
+const resume = text.resume;
+const projects = getProjects(locale);
+const openWork = getOpenWork(locale);
+---
+<Base title={resume.title} description={resume.description} locale={locale} path="/resume/">
+  <article class="container resume-page">
+    <div class="resume-actions"><a href={localePath(locale)}>{resume.back}</a><Link href={resumePdf(locale)} variant="button">{resume.download}</Link></div>
+    <header><p class="eyebrow">{resume.eyebrow}</p><h1 class="display">{profile.fullName}</h1><p class="lead">{text.profile.role}</p><p class="resume-contact">{text.profile.location} · <a href={`mailto:${profile.email}`}>{profile.email}</a><br /><a href={profile.linkedin}>linkedin.com/in/jp-dev-full-stack</a> · <a href={profile.github}>github.com/Razikale365</a></p></header>
+    <section><h2>{resume.profileHeading}</h2><p>{resume.summary}</p></section>
+    <section><h2>{resume.experienceHeading}</h2><h3>{resume.experience.title} · {resume.experience.company}</h3><p class="small muted">{resume.experience.period}</p><ul>{resume.experience.points.map(point => <li>{point}</li>)}</ul></section>
+    <section><h2>{resume.openHeading}</h2>{openWork.map(item => <p><strong>{item.name}:</strong> {item.resumeLine} {item.links.map((link, index) => <>{index > 0 && " · "}<a href={link.href}>{link.href.replace("https://", "").replace(/\/$/, "")}</a></>)}</p>)}</section>
+    <section><h2>{resume.independentHeading}</h2>{projects.map(project => <div class="resume-project">{project.slug === "fiscal-brain" ? <><h3>{resume.fiscalBrain.title}</h3><ul>{resume.fiscalBrain.points.map(point => <li>{point}</li>)}</ul></> : <><h3>{project.name}</h3><p>{project.resumeLine} <span class="muted">{project.status}</span></p></>}</div>)}</section>
+    <section><h2>{resume.capabilitiesHeading}</h2>{resume.capabilities.map(item => <p><strong>{item.title}:</strong> {item.detail}</p>)}</section>
+    <section><h2>{resume.educationHeading}</h2><p><strong>{resume.education.title}</strong> — {resume.education.status}.</p><p><strong>{resume.languagesLabel}</strong> {resume.languages}</p></section>
+  </article>
+</Base>
