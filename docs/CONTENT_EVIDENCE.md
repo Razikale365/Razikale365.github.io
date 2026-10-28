@@ -9,18 +9,19 @@ What each public claim rests on. Case studies describe inspected implementation,
 | Fiscal Brain | Asynchronous PDF ingestion; Qdrant vector retrieval; worker-owned Neo4j indexing; source/page provenance; model-role routing; retained synthetic demo artifacts rechecked against the PDF | Personal tool, used daily; private repository; the published two-page synthetic example is not answer-quality proof |
 | Bulldog: Sverige | Unity 6 project; product direction (2D life simulator for learning Swedish) taken from the project README. No technical claims are made | In development; private repository; listed under further exploration, no case study |
 
-The site presents RegMais, DispensaMais and Fiscal Brain, in that order. See [the Fiscal Brain evidence ledger](FISCAL_BRAIN_EVIDENCE.md) for source files, tests, artifact boundaries, screenshot provenance and unverified claims.
+The site presents RegMais, DispensaMais and Fiscal Brain, in that order. "Answers you can trace" and "source-backed answers" refer to Fiscal Brain's provenance (and, for data, to Nordic Balancing Watch's version history), not to every project. See [the Fiscal Brain evidence ledger](FISCAL_BRAIN_EVIDENCE.md) for source files, tests, artifact boundaries, screenshot provenance and unverified claims.
 
 ## Experience, education and languages
 
-- Professional experience comes from João Paulo's own résumé. Employer code was not inspected; the portfolio claims no numerical outcomes and no sole authorship of team work. The natural-language-to-SQL chatbot is described as built, with no production-user claim.
+- Professional experience comes from João Paulo's own résumé. Employer code was not inspected; the portfolio claims no numerical outcomes and no sole authorship of team work. The natural-language-to-SQL chatbot is described as built, with no production-user claim. PHP and Laravel are listed as João Paulo stated them: PHP is the base of the DemandaNet platform and has been part of his work alongside Python since the start of his career. No years are attached to any technology.
 - Education is shown as in progress: Tecnólogo in Applied AI, PUCPR, expected end of 2027.
 - Language levels are as João Paulo stated them, not upgraded.
 
 ## Nordic open-source work
 
 - **nordic-balancing:** public repository and PyPI package (v0.4.0, checked 2026-10-27). The description paraphrases the package summary.
-- **Nordic Balancing Watch:** describes what it tracks only. Its observation history is short, so the site states no findings, statistics or market conclusions.
+- **nordic-balancing contracts:** "never zero" and source reconciliation come from the v0.4.0 README (no gap filling; `None` for unpublished values; `reconcile_imbalance_prices`).
+- **Nordic Balancing Watch:** describes what it tracks only: it runs on nordic-balancing and keeps every price version its collector sees. Collection started on 24 October 2026, so the site states no findings, statistics or market conclusions.
 - **entsoe-py PR #557:** shown as "submitted, under review". Open and not merged as of 2026-10-28; recheck before changing the wording.
 
 RegMais, DispensaMais and Fiscal Brain repositories stay private and have no source links.

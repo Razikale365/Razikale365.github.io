@@ -16,19 +16,20 @@ export const en: SiteText = {
   home: {
     title: "João Paulo Navarro — Full-Stack / Applied AI Engineer",
     description:
-      "Full-stack and applied AI engineer heading into Nordic energy: open-source tooling for Nordic balancing-market data, a health-regulation system in production and AI answers you can verify.",
-    heroTitle: ["Reliable software.", "Idea to production."],
+      "Full-stack and applied AI engineer: backend systems for public-sector health workflows, an AI tutor whose answers cite their sources, and open-source tools for Nordic energy data.",
+    heroTitle: ["Reliable systems.", "Answers you can\u00a0trace."],
     intro:
-      "I’m João Paulo. I build software that critical operations depend on: patients reach the right care, records stay trustworthy, and AI answers can be checked against their sources. Now I’m bringing that discipline to Nordic energy data.",
+      "I’m João Paulo. I build backend systems for public-sector workflows, and an AI tutor whose answers cite the pages they rely on. Now I’m bringing the same care for data integrity to open-source software for Nordic energy data.",
     introDetail:
-      "Five years shipping production software, largely for the public sector, owned end to end from data model to deployment. Built in public for the Nordic energy sector: nordic-balancing on PyPI and Nordic Balancing Watch.",
+      "What connects the work: business rules that have to hold, data that has to stay consistent, and answers that can be checked.",
     proof: [
-      "nordic-balancing: Nordic energy data, on PyPI",
       "5 years shipping production software",
-      "Health-regulation system in production",
-      "3 systems built end to end",
+      "Patient-regulation system in production",
+      "Open-source Nordic energy library on PyPI",
+      "AI answers linked to their source pages",
     ],
-    explore: "Explore selected work",
+    explore: "Explore Nordic energy tools",
+    seeCases: "See backend and AI case studies",
     viewResume: "View résumé ↗",
     availability: "Available to relocate, with visa sponsorship",
     indexLabel: "Selected systems",
@@ -68,9 +69,9 @@ export const en: SiteText = {
       },
     ],
     openEyebrow: "01 / Nordic energy, built in public",
-    openTitle: "Nordic energy data, built in public.",
+    openTitle: "Making Nordic energy data easier to inspect and use.",
     openIntro:
-      "Open, live and inspectable work on the Nordic balancing market: a published Python library that brings Energinet, Fingrid, Svenska kraftnät, eSett and ENTSO-E data into one 15-minute UTC model; a live site tracking when that data appears and what gets revised afterward; and a contribution to entsoe-py, under review.",
+      "Nordic balancing data comes from five sources, each with its own formats, gaps and revisions, and the public APIs show only the latest value. nordic-balancing puts it into one 15-minute UTC model and leaves a missing value missing instead of filling it in. Nordic Balancing Watch runs on that library and keeps every version it sees, so you can trace when a price first appeared and what changed later.",
     moreEyebrow: "04 / Further exploration",
     moreTitle: "A wider engineering toolkit.",
     bulldog: {
@@ -85,13 +86,14 @@ export const en: SiteText = {
     aboutLead: "I build software that real organizations run on every day.",
     aboutBody: [
       "At DemandaNet, I’ve worked on education-management workflows, relational data migrations and product modules since 2021. My independent projects extend that practice into public-sector health services and evidence-grounded document intelligence.",
-      "Python, TypeScript and SQL connect much of this work. I choose the rest around the problem, the people using the software and the cost of maintaining it.",
+      "Python and PHP have been part of my work since the start of my career: PHP is the base of the DemandaNet platform, and I also work with Laravel. TypeScript and SQL cover much of the rest, and I choose other tools around the problem, the people using the software and the cost of maintaining it.",
     ],
     aboutLink: "Experience & résumé →",
     contactEyebrow: "Let’s talk about the work",
-    contactTitle: "Have a problem worth building for?",
+    contactTitle:
+      "Need help with a backend system, a data integration or an AI tool with source-backed answers?",
     contactLead:
-      "I’m looking for full-stack, backend or applied AI roles, especially in energy, where reliable data and traceable decisions matter.",
+      "Tell me what you’re building. I’m looking for backend, full-stack and applied AI roles, in Nordic energy and beyond.",
     contactResume: "Résumé →",
     contactNote:
       "Based in Brazil. Fluent in English, learning Swedish. Available to relocate with visa sponsorship, or to work remotely.",
@@ -160,7 +162,7 @@ export const en: SiteText = {
     educationHeading: "Education & languages",
     languagesLabel: "Languages:",
     summary:
-      "Full-stack engineer with five years shipping production software, largely for the public sector, now focused on Nordic energy data. Built in public: nordic-balancing on PyPI and Nordic Balancing Watch. Also: patient regulation in production and verifiable AI answers.",
+      "Full-stack engineer with five years shipping production software in PHP and Python, largely for the public sector, now focused on Nordic energy data. Built in public: nordic-balancing on PyPI and Nordic Balancing Watch. Also: patient regulation in production and verifiable AI answers.",
     experience: {
       title: "Full-Stack Developer",
       company: "DemandaNet",
@@ -183,7 +185,7 @@ export const en: SiteText = {
       {
         title: "Backend & data",
         detail:
-          "Python, FastAPI, SQLAlchemy, SQL, REST APIs, PostgreSQL, MySQL, Oracle, migrations and ETL.",
+          "Python, PHP, Laravel, FastAPI, SQLAlchemy, SQL, REST APIs, PostgreSQL, MySQL, Oracle, migrations and ETL.",
       },
       {
         title: "Frontend",
@@ -216,7 +218,7 @@ export const en: SiteText = {
       resumeLine:
         "Pharmacy system that gives each patient exactly the medication and quantity authorized, with lot-level stock accuracy.",
       summary:
-        "Ensures every patient receives exactly the medication and quantity they’re authorized for, while keeping the pharmacy’s stock records accurate down to the lot, even under retries and simultaneous edits.",
+        "A public pharmacy must give each patient exactly what they are authorized to receive and keep stock true down to the lot. I built the dispensing system end to end. Each dispensation rechecks the authorization version before stock moves and carries an idempotency key, so a retry is recognized instead of counted as a new dispensation.",
       status: "Built end to end · private repository",
       responsibility:
         "Designed and built independently, end to end: domain model, API, operational interface and verification workflows.",
@@ -256,7 +258,7 @@ export const en: SiteText = {
       resumeLine:
         "Personal AI study tool, used daily: answers cite the exact passages and pages they rely on.",
       summary:
-        "The AI study tool I built for myself and used daily while preparing for exams. It turns large PDF collections into a tutor whose answers come with the exact passages and pages they rely on, so I could verify instead of taking answers on trust.",
+        "Fluent chatbot answers were no use for exam study if I couldn’t check them. I built a personal AI tutor over my own PDF library and used it daily. Each retrieved passage keeps its file and page all the way to the answer, so every answer can be checked against the document.",
       status: "Personal tool · used daily",
       responsibility:
         "Designed, built and used daily: document ingestion, retrieval, model integration and the Tutor interface, all running on my own hardware.",
@@ -297,7 +299,7 @@ export const en: SiteText = {
       resumeLine:
         "Patient-regulation system that routes waiting-list patients to the right specialist appointment by specialty, priority and waiting time.",
       summary:
-        "Moves patients from the waiting list to the right specialist appointment, matching demand to available capacity by specialty, priority and waiting time, with every allocation transparent before it’s confirmed.",
+        "Public-sector staff have to match a specialist waiting list against limited appointment capacity. I built the system that proposes allocations by specialty, priority and waiting time. A proposal is only a preview: nothing changes in patient records until the operator confirms it.",
       status: "In production",
       responsibility:
         "Designed, built and taken to production independently, to the client’s specification: multi-tenant workflows, the web interface and deployment safeguards.",
@@ -339,7 +341,7 @@ export const en: SiteText = {
       name: "nordic-balancing",
       domain: "Open-source Python library",
       description:
-        "A Python client for Nordic electricity balancing and imbalance data from Energinet, Fingrid, Svenska kraftnät, eSett and ENTSO-E, normalized to 15-minute UTC intervals. Public and installable from PyPI.",
+        "The data layer: typed Python clients for balancing and imbalance data from Energinet, Fingrid, Svenska kraftnät, eSett and ENTSO-E, on 15-minute UTC intervals. A value the source has not published stays empty, never zero, and two sources can be reconciled where they disagree. Installable from PyPI.",
       resumeLine:
         "Open-source Python library for Nordic balancing and imbalance data, normalized to 15-minute UTC intervals; on PyPI (v0.4.0).",
       linkLabels: ["Source", "PyPI v0.4.0"],
@@ -348,7 +350,7 @@ export const en: SiteText = {
       name: "Nordic Balancing Watch",
       domain: "Live tracking site",
       description:
-        "Tracks when Nordic balancing-market data appears from each source and what gets revised afterward.",
+        "Built on nordic-balancing: a collector polls the sources and keeps every price version it sees; the site shows when each price first appeared, per zone and source, and what was revised afterward. Collection started in October 2026, so the history is still short.",
       resumeLine:
         "Live site tracking when Nordic balancing data appears from each source and what is revised afterward.",
       linkLabels: ["Visit the site"],
