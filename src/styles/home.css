@@ -25,6 +25,21 @@
   align-items: center;
   gap: var(--s3);
 }
+.proof-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s3) var(--s6);
+  list-style: none;
+  margin: var(--s6) 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.proof-list li {
+  border-left: 2px solid var(--accent);
+  padding-left: var(--s3);
+}
 .availability {
   color: var(--muted);
   margin: var(--s8) 0 0;
@@ -221,4 +236,32 @@
 }
 .contact .lead {
   max-width: 50ch;
+}
+.open-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s6);
+}
+.index-open-label {
+  margin: var(--s6) 0 var(--s2);
+}
+.index-open {
+  list-style: none;
+  margin: 0 0 var(--s4);
+  padding: 0;
+}
+.work-index .index-open li,
+.work-index .index-open li:last-child {
+  border: 0;
+}
+.work-index .index-open li a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  min-height: 44px;
+  padding-block: 0;
+  font-weight: 500;
+}
+.work-index .index-open li a > span:last-child {
+  display: inline;
 }

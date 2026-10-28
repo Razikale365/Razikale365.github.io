@@ -1,7 +1,17 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import lighthouse from "lighthouse";
 import { chromium } from "playwright";
-const paths = ["/", "/work/dispensamais/", "/work/regmais/", "/work/fiscal-brain/", "/resume/"];
+const paths = [
+  "/",
+  "/work/dispensamais/",
+  "/work/regmais/",
+  "/work/fiscal-brain/",
+  "/resume/",
+  "/pt-br/",
+  "/pt-br/resume/",
+  "/sv/",
+  "/sv/resume/",
+];
 const base = process.env.TEST_URL || "http://127.0.0.1:4322";
 const browser = await chromium.launch({
   channel: "chrome",
