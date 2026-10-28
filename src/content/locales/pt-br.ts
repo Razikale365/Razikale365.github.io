@@ -162,30 +162,30 @@ export const ptBr: SiteText = {
     educationHeading: "Formação e idiomas",
     languagesLabel: "Idiomas:",
     summary:
-      "Engenheiro full-stack com cinco anos entregando software em produção, principalmente para o setor público, agora focado em dados de energia nórdicos. Em código aberto: nordic-balancing no PyPI e Nordic Balancing Watch. Também: regulação de pacientes em produção e respostas de IA verificáveis.",
+      "Engenheiro full-stack com cinco anos entregando software em produção com PHP e Python, principalmente para o setor público, agora focado em dados de energia nórdicos. Em código aberto: nordic-balancing no PyPI e Nordic Balancing Watch. Também: regulação de pacientes em produção e respostas de IA verificáveis.",
     experience: {
       title: "Desenvolvedor Full-Stack",
       company: "DemandaNet",
       period: "junho de 2021–presente",
       points: [
         "Construí e mantive módulos que permitem às redes de ensino importar, recuperar, processar e gerir seus dados.",
-        "Projetei o módulo de almoxarifado virtual dinâmico e levei a plataforma a bibliotecas escolares e redes intramunicipais.",
+        "Projetei o almoxarifado virtual dinâmico e levei a plataforma a bibliotecas escolares e redes intramunicipais.",
         "Migrei dados legados de Oracle para MySQL, preservando a integridade e mantendo a operação no ar.",
-        "Construí um chatbot com LangChain que transforma perguntas em linguagem comum em SQL; entreguei melhorias na AWS.",
+        "Construí um chatbot com LangChain que converte perguntas em linguagem comum em SQL; fiz melhorias na AWS.",
       ],
     },
     fiscalBrain: {
       title: "Fiscal Brain — ferramenta pessoal de estudo com IA, uso diário",
       points: [
         "Construí um tutor de IA que cita suas fontes: ingestão assíncrona de PDFs (FastAPI + worker) no Qdrant e Neo4j.",
-        "Usei diariamente no meu próprio hardware, dividindo a inferência entre provedores locais e na nuvem; evidências conferidas palavra por palavra.",
+        "Usei diariamente no meu hardware, dividindo a inferência entre provedores locais e na nuvem; evidências conferidas palavra por palavra.",
       ],
     },
     capabilities: [
       {
         title: "Backend e dados",
         detail:
-          "Python, FastAPI, SQLAlchemy, SQL, APIs REST, PostgreSQL, MySQL, Oracle, migrações e ETL.",
+          "Python, PHP, Laravel, FastAPI, SQLAlchemy, SQL, APIs REST, PostgreSQL, MySQL, Oracle, migrações e ETL.",
       },
       {
         title: "Frontend",

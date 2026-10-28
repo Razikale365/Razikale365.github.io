@@ -162,7 +162,7 @@ export const sv: SiteText = {
     educationHeading: "Utbildning och språk",
     languagesLabel: "Språk:",
     summary:
-      "Fullstack-ingenjör med fem år av mjukvara i produktion, främst för offentlig sektor, nu med fokus på nordiska energidata: nordic-balancing (PyPI) och Nordic Balancing Watch, byggda öppet.",
+      "Fullstack-ingenjör med fem år av mjukvara i produktion, byggd i PHP och Python, främst för offentlig sektor, nu med fokus på nordiska energidata: nordic-balancing (PyPI) och Nordic Balancing Watch, byggda öppet.",
     experience: {
       title: "Fullstackutvecklare",
       company: "DemandaNet",
@@ -185,7 +185,7 @@ export const sv: SiteText = {
       {
         title: "Backend och data",
         detail:
-          "Python, FastAPI, SQLAlchemy, SQL, REST-API:er, PostgreSQL, MySQL, Oracle, migrering och ETL.",
+          "Python, PHP, Laravel, FastAPI, SQLAlchemy, SQL, REST-API:er, PostgreSQL, MySQL, Oracle, migrering och ETL.",
       },
       {
         title: "Frontend",

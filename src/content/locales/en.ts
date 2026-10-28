@@ -162,7 +162,7 @@ export const en: SiteText = {
     educationHeading: "Education & languages",
     languagesLabel: "Languages:",
     summary:
-      "Full-stack engineer with five years shipping production software, largely for the public sector, now focused on Nordic energy data. Built in public: nordic-balancing on PyPI and Nordic Balancing Watch. Also: patient regulation in production and verifiable AI answers.",
+      "Full-stack engineer with five years shipping production software in PHP and Python, largely for the public sector, now focused on Nordic energy data. Built in public: nordic-balancing on PyPI and Nordic Balancing Watch. Also: patient regulation in production and verifiable AI answers.",
     experience: {
       title: "Full-Stack Developer",
       company: "DemandaNet",
@@ -185,7 +185,7 @@ export const en: SiteText = {
       {
         title: "Backend & data",
         detail:
-          "Python, FastAPI, SQLAlchemy, SQL, REST APIs, PostgreSQL, MySQL, Oracle, migrations and ETL.",
+          "Python, PHP, Laravel, FastAPI, SQLAlchemy, SQL, REST APIs, PostgreSQL, MySQL, Oracle, migrations and ETL.",
       },
       {
         title: "Frontend",
