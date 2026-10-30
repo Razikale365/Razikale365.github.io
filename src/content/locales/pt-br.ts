@@ -65,7 +65,7 @@ export const ptBr: SiteText = {
         title: "Tornar as respostas verificáveis.",
         body: "Levar o texto-fonte e as referências de página pela ingestão, pela recuperação e pela saída do modelo. Conferir a evidência contra o documento de origem.",
         link: "Ver o caminho do documento à evidência →",
-        slug: "fiscal-brain",
+        slug: "study-brain",
       },
     ],
     openEyebrow: "01 / Energia nórdica, em código aberto",
@@ -96,7 +96,7 @@ export const ptBr: SiteText = {
       "Me conte o que você está construindo. Busco vagas de backend, full-stack e IA aplicada, em energia nórdica e além.",
     contactResume: "Currículo →",
     contactNote:
-      "No Brasil. Inglês fluente, aprendendo sueco. Disponível para mudança com patrocínio de visto, ou para trabalho remoto.",
+      "No Brasil. Inglês fluente, aprendendo sueco. Disponível para mudança para a Suécia, a Dinamarca ou outro país da Europa com patrocínio de visto, ou para trabalho remoto.",
   },
   caseStudy: {
     titleSuffix: "Estudo de caso de engenharia",
@@ -123,23 +123,23 @@ export const ptBr: SiteText = {
     otherCases: "Outros estudos de caso",
     keepExploring: "Continue explorando",
   },
-  fiscalEvidence: {
+  studyEvidence: {
     eyebrow: "Verificado com um documento sintético",
     title: "Uma resposta com evidências que você pode conferir.",
     introBefore: "O documento de demonstração traz o rótulo",
     introAfter:
-      "Todas as regras tributárias, valores e prazos nestas capturas são fictícios. Elas testam a ingestão e a proveniência. A interface do produto está em português.",
-    tutorLabel: "Abrir em tamanho real a captura da resposta e das evidências do Fiscal Brain",
+      "Todas as regras tributárias, valores e prazos nestas capturas são fictícios. Elas testam a ingestão e a proveniência. A interface do produto está em português. As capturas são da versão anterior, que se chamava Fiscal Brain.",
+    tutorLabel: "Abrir em tamanho real a captura da resposta e das evidências do Study Brain",
     tutorAlt:
       "Resposta gravada do Tutor mostrando o prazo fictício de recurso de 17 dias ao lado de duas fontes em PDF, páginas 1 e 2, com rótulos de recuperação vetorial e pontuações de ranqueamento.",
     tutorCaption:
       "A resposta salva, rolada até o trecho sobre o recurso, ao lado dos dois itens de evidência. Recortada da captura real do navegador em 1366 px; a saída não foi alterada. As pontuações ordenam o material recuperado, não medem a confiança na resposta. Abra a imagem para ler em tamanho real.",
-    ingestionLabel: "Abrir em tamanho real a captura da ingestão concluída do Fiscal Brain",
+    ingestionLabel: "Abrir em tamanho real a captura da ingestão concluída do Study Brain",
     ingestionAlt:
       "Histórico da página de ingestão mostrando fiscal-brain-golden-demo.pdf com status concluído.",
     ingestionCaption:
       "Tarefa concluída no histórico de ingestão. O registro mantido da tarefa informa dois trechos e zero erros; o console ocioso não é um registro de processamento ao vivo.",
-    mobileLabel: "Abrir em tamanho real a captura das evidências no celular do Fiscal Brain",
+    mobileLabel: "Abrir em tamanho real a captura das evidências no celular do Study Brain",
     mobileAlt:
       "Em 390 px, a gaveta de evidências no celular mostra as duas fontes em PDF sintético, os números de página, o método vetorial e as pontuações de recuperação.",
     mobileCaption:
@@ -162,7 +162,7 @@ export const ptBr: SiteText = {
     educationHeading: "Formação e idiomas",
     languagesLabel: "Idiomas:",
     summary:
-      "Engenheiro full-stack com cinco anos entregando software em produção com PHP e Python, principalmente para o setor público, agora focado em dados de energia nórdicos. Em código aberto: nordic-balancing no PyPI e Nordic Balancing Watch. Também: regulação de pacientes em produção e respostas de IA verificáveis.",
+      "Engenheiro full-stack com cinco anos de software em produção em Python e PHP, sobretudo para o setor público, além de TypeScript/React e IA aplicada (RAG, LLMs). Hoje, ferramentas abertas para dados de energia nórdicos.",
     experience: {
       title: "Desenvolvedor Full-Stack",
       company: "DemandaNet",
@@ -174,27 +174,27 @@ export const ptBr: SiteText = {
         "Construí um chatbot com LangChain que converte perguntas em linguagem comum em SQL; fiz melhorias na AWS.",
       ],
     },
-    fiscalBrain: {
-      title: "Fiscal Brain — ferramenta pessoal de estudo com IA, uso diário",
+    studyBrain: {
+      title: "Study Brain — ferramenta pessoal de estudo com IA, uso diário",
       points: [
-        "Construí um tutor de IA que cita suas fontes: ingestão assíncrona de PDFs (FastAPI + worker) no Qdrant e Neo4j.",
-        "Usei diariamente no meu hardware, dividindo a inferência entre provedores locais e na nuvem; evidências conferidas palavra por palavra.",
+        "Construí um tutor RAG que cita suas fontes: ingestão assíncrona de PDFs (FastAPI + worker), Qdrant, Neo4j.",
+        "Uso diário no meu hardware, com inferência entre modelos locais e na nuvem; evidências conferidas palavra por palavra.",
       ],
     },
     capabilities: [
       {
         title: "Backend e dados",
         detail:
-          "Python, PHP, Laravel, FastAPI, SQLAlchemy, SQL, APIs REST, PostgreSQL, MySQL, Oracle, migrações e ETL.",
+          "Python, FastAPI, SQLAlchemy, PHP, Laravel, Node.js, SQL (PostgreSQL, MySQL, Oracle), APIs REST, ETL.",
       },
       {
         title: "Frontend",
-        detail: "React, TypeScript, JavaScript, HTML, CSS e interfaces operacionais.",
+        detail: "TypeScript, React, Next.js, JavaScript, HTML, CSS e interfaces operacionais.",
       },
       {
-        title: "Entrega e IA aplicada",
+        title: "IA aplicada, nuvem e entrega",
         detail:
-          "Git, AWS, testes, ingestão e busca em documentos, Qdrant, Neo4j, Ollama, LangChain e chatbots de linguagem natural para SQL.",
+          "Aplicações com RAG e LLMs (Qdrant, Neo4j, Ollama, LangChain, linguagem natural para SQL); AWS, Google Cloud, Cloudflare; CI/CD com GitHub Actions; testes com pytest e Playwright.",
       },
     ],
     education: {
@@ -254,18 +254,18 @@ export const ptBr: SiteText = {
       discussion:
         "Onde devem terminar as verificações otimistas de versão e começar os locks transacionais?",
     },
-    "fiscal-brain": {
+    "study-brain": {
       domain: "IA aplicada · ferramenta pessoal de estudo",
       headline: "Respostas de IA que você pode conferir na fonte.",
       resumeLine:
         "Ferramenta pessoal de estudo com IA, usada diariamente: as respostas citam os trechos e as páginas em que se apoiam.",
       summary:
         "Respostas fluentes de chatbot não serviam para estudar para concursos se eu não pudesse conferi-las. Construí um tutor de IA pessoal sobre minha própria biblioteca de PDFs e o usei todos os dias. Cada trecho recuperado mantém o arquivo e a página até a resposta, para que toda resposta possa ser conferida no documento.",
-      status: "Ferramenta pessoal · uso diário",
+      status: "Ferramenta pessoal · uso diário · em reconstrução",
       responsibility:
         "Projetado, construído e usado diariamente: ingestão de documentos, recuperação, integração com modelos e a interface do Tutor, tudo rodando no meu próprio hardware.",
       problem:
-        "Eu estudava para concursos da área fiscal com uma biblioteca de PDFs grande e crescente. Chatbots genéricos davam respostas fluentes que eu não conseguia conferir. Construí o Fiscal Brain para que cada resposta aponte para o texto-fonte e a página exatos, que é o que torna uma resposta de IA útil para estudar a sério.",
+        "Eu estudava para concursos da área fiscal com uma biblioteca de PDFs grande e crescente. Chatbots genéricos davam respostas fluentes que eu não conseguia conferir. Construí o Study Brain para que cada resposta aponte para o texto-fonte e a página exatos, que é o que torna uma resposta de IA útil para estudar a sério.",
       architecture:
         "O FastAPI enfileira o trabalho de ingestão. Um worker separado extrai e divide os PDFs em trechos, grava sua estrutura no Neo4j e gera embeddings do texto completo dos trechos no Qdrant. O Tutor recupera evidências, envia-as a um modelo e devolve a resposta com os metadados da fonte. A demonstração REST gravada foi configurada com Ollama local e qwen3:8b. Seus dois itens de evidência têm o rótulo vector. A busca full-text e o enriquecimento por grafo no Neo4j existem no código, mas sua contribuição para esta resposta não foi medida separadamente.",
       steps: [

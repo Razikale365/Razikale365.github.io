@@ -5,7 +5,7 @@ const paths = [
   "/",
   "/work/dispensamais/",
   "/work/regmais/",
-  "/work/fiscal-brain/",
+  "/work/study-brain/",
   "/resume/",
   "/pt-br/",
   "/pt-br/resume/",

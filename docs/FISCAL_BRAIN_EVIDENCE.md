@@ -1,5 +1,7 @@
 # Fiscal Brain evidence ledger
 
+The project is now called Study Brain and is being rebuilt. This ledger records the earlier build, when it was named Fiscal Brain.
+
 This ledger separates the implementation, retained demonstration artifacts, and
 unverified claims for the portfolio entry. It is intentionally limited to a
 synthetic local demonstration. No production, legal-advice, answer-accuracy, or

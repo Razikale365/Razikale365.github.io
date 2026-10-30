@@ -27,7 +27,7 @@ Lighthouse 13.4.1 against the production preview. Three runs per route and devic
 | Home | Mobile / desktop | 99 / 98 | 100 | 100 | 100 |
 | DispensaMais | Mobile / desktop | 95 / 97 | 100 | 100 | 100 |
 | RegMais | Mobile / desktop | 96 / 99 | 100 | 100 | 100 |
-| Fiscal Brain | Mobile / desktop | 99 / 100 | 100 | 100 | 100 |
+| Study Brain | Mobile / desktop | 99 / 100 | 100 | 100 | 100 |
 | Résumé | Mobile / desktop | 100 / 100 | 100 | 100 | 100 |
 | pt-BR home | Mobile / desktop | 100 / 100 | 100 | 100 | 100 |
 | pt-BR résumé | Mobile / desktop | 100 / 100 | 100 | 100 | 100 |

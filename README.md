@@ -1,6 +1,6 @@
 # João Paulo Navarro — software engineering portfolio
 
-Static portfolio for a Full-Stack / Applied AI Engineer building operational software and document-intelligence systems. Selected work: RegMais, DispensaMais, Fiscal Brain.
+Static portfolio for a Full-Stack / Applied AI Engineer building operational software and document-intelligence systems. Selected work: RegMais, DispensaMais, Study Brain.
 
 English is the default at `/`; Brazilian Portuguese lives under `/pt-br/` and Swedish under `/sv/`. A header switcher (EN / PT-BR / SV) links to the same page in each language. Light and dark themes follow the system setting, and a header toggle overrides it and remembers the choice.
 

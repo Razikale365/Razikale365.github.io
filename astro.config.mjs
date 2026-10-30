@@ -7,4 +7,10 @@ export default defineConfig({
   output: "static",
   ...(site ? { site } : {}),
   devToolbar: { enabled: false },
+  // Fiscal Brain was renamed Study Brain; keep links already shared working.
+  redirects: {
+    "/work/fiscal-brain": "/work/study-brain",
+    "/pt-br/work/fiscal-brain": "/pt-br/work/study-brain",
+    "/sv/work/fiscal-brain": "/sv/work/study-brain",
+  },
 });

@@ -65,7 +65,7 @@ export const sv: SiteText = {
         title: "Gör svar granskningsbara.",
         body: "Bär med källtext och sidhänvisningar genom inläsning, sökning och modellens svar. Kontrollera evidensen mot dokumentet den kommer från.",
         link: "Se vägen från dokument till evidens →",
-        slug: "fiscal-brain",
+        slug: "study-brain",
       },
     ],
     openEyebrow: "01 / Nordisk energi, byggt öppet",
@@ -96,7 +96,7 @@ export const sv: SiteText = {
       "Berätta vad du bygger. Jag söker roller inom backend, fullstack och tillämpad AI, inom nordisk energi och utanför.",
     contactResume: "CV →",
     contactNote:
-      "Bor i Brasilien. Flytande engelska, lär mig svenska. Tillgänglig för flytt med visumsponsring, eller för distansarbete.",
+      "Bor i Brasilien. Flytande engelska, lär mig svenska. Tillgänglig för flytt till Sverige, Danmark eller annat land i Europa med visumsponsring, eller för distansarbete.",
   },
   caseStudy: {
     titleSuffix: "Fallstudie",
@@ -123,23 +123,23 @@ export const sv: SiteText = {
     otherCases: "Andra fallstudier",
     keepExploring: "Utforska vidare",
   },
-  fiscalEvidence: {
+  studyEvidence: {
     eyebrow: "Verifierat med ett syntetiskt dokument",
     title: "Ett svar med evidens som går att granska.",
     introBefore: "Demodokumentet är märkt",
     introAfter:
-      "Alla skatteregler, belopp och tidsfrister i bilderna är påhittade. De testar inläsning och spårbarhet. Produktens gränssnitt är på portugisiska.",
-    tutorLabel: "Öppna bilden av Fiscal Brains svar och evidens i full storlek",
+      "Alla skatteregler, belopp och tidsfrister i bilderna är påhittade. De testar inläsning och spårbarhet. Produktens gränssnitt är på portugisiska. Bilderna är från den tidigare versionen, som då hette Fiscal Brain.",
+    tutorLabel: "Öppna bilden av Study Brains svar och evidens i full storlek",
     tutorAlt:
       "Inspelat svar från Tutor som visar den påhittade överklagandefristen på 17 dagar bredvid två PDF-källor, sidorna 1 och 2, med etiketter för vektorsökning och rankningspoäng.",
     tutorCaption:
       "Det sparade svaret, rullat till stycket om överklagande, bredvid båda evidensposterna. Beskuren från den verkliga webbläsarbilden i 1366 px; utdata är oförändrade. Poängen rangordnar hämtat material, de mäter inte hur säkert svaret är. Öppna bilden för att läsa den i full storlek.",
-    ingestionLabel: "Öppna bilden av Fiscal Brains slutförda inläsning i full storlek",
+    ingestionLabel: "Öppna bilden av Study Brains slutförda inläsning i full storlek",
     ingestionAlt:
       "Historiken på inläsningssidan visar fiscal-brain-golden-demo.pdf med status slutförd.",
     ingestionCaption:
       "Slutfört jobb i inläsningshistoriken. Det sparade jobbet anger två textavsnitt och noll fel; den inaktiva konsolen är ingen logg över pågående bearbetning.",
-    mobileLabel: "Öppna mobilbilden av Fiscal Brains evidens i full storlek",
+    mobileLabel: "Öppna mobilbilden av Study Brains evidens i full storlek",
     mobileAlt:
       "Vid 390 px visar mobilens evidenspanel båda syntetiska PDF-källorna, deras sidnummer, vektormetod och sökpoäng.",
     mobileCaption:
@@ -162,7 +162,7 @@ export const sv: SiteText = {
     educationHeading: "Utbildning och språk",
     languagesLabel: "Språk:",
     summary:
-      "Fullstack-ingenjör med fem år av mjukvara i produktion, byggd i PHP och Python, främst för offentlig sektor, nu med fokus på nordiska energidata: nordic-balancing (PyPI) och Nordic Balancing Watch, byggda öppet.",
+      "Fullstack-ingenjör med fem år av mjukvara i produktion, byggd i Python och PHP, främst för offentlig sektor, samt TypeScript/React och tillämpad AI (RAG, LLM). Bygger nu verktyg med öppen källkod för nordiska energidata.",
     experience: {
       title: "Fullstackutvecklare",
       company: "DemandaNet",
@@ -174,27 +174,28 @@ export const sv: SiteText = {
         "Byggde en LangChain-chattbot som gör frågor på vanligt språk till SQL; levererade AWS-förbättringar.",
       ],
     },
-    fiscalBrain: {
-      title: "Fiscal Brain — personligt AI-studieverktyg, använt dagligen",
+    studyBrain: {
+      title: "Study Brain — personligt AI-studieverktyg, använt dagligen",
       points: [
-        "Byggde en AI-handledare som hänvisar till sina källor: asynkron PDF-inläsning (FastAPI + worker) till Qdrant och Neo4j.",
-        "Körde det dagligen på egen hårdvara och fördelade inferensen mellan lokala och molnbaserade leverantörer; evidensen kontrollerad ordagrant.",
+        "Byggde en RAG-handledare som hänvisar till sina källor: asynkron PDF-inläsning (FastAPI + worker), vektorsökning i Qdrant, Neo4j.",
+        "Körde det dagligen på egen hårdvara, med inferens fördelad mellan lokala modeller och molnmodeller; evidensen kontrollerad ordagrant.",
       ],
     },
     capabilities: [
       {
         title: "Backend och data",
         detail:
-          "Python, PHP, Laravel, FastAPI, SQLAlchemy, SQL, REST-API:er, PostgreSQL, MySQL, Oracle, migrering och ETL.",
+          "Python, FastAPI, SQLAlchemy, PHP, Laravel, Node.js, SQL (PostgreSQL, MySQL, Oracle), REST-API:er, ETL.",
       },
       {
         title: "Frontend",
-        detail: "React, TypeScript, JavaScript, HTML, CSS och gränssnitt för verksamhetssystem.",
+        detail:
+          "TypeScript, React, Next.js, JavaScript, HTML, CSS och gränssnitt för verksamhetssystem.",
       },
       {
-        title: "Leverans och tillämpad AI",
+        title: "Tillämpad AI, moln och leverans",
         detail:
-          "Git, AWS, testning, inläsning och sökning i dokument, Qdrant, Neo4j, Ollama, LangChain och chattbotar som översätter naturligt språk till SQL.",
+          "RAG- och LLM-applikationer (Qdrant, Neo4j, Ollama, LangChain, naturligt språk till SQL); AWS, Google Cloud, Cloudflare; CI/CD med GitHub Actions; tester med pytest och Playwright.",
       },
     ],
     education: {
@@ -252,18 +253,18 @@ export const sv: SiteText = {
         "Arbetsflödena för verksamheten är implementerade. Integrationer med nationella hälsosystem kräver ytterligare konfiguration, och produktionsdrift har egna krav inför release.",
       discussion: "Var ska optimistiska versionskontroller sluta och transaktionslås ta vid?",
     },
-    "fiscal-brain": {
+    "study-brain": {
       domain: "Tillämpad AI · personligt studieverktyg",
       headline: "AI-svar som går att kontrollera mot källan.",
       resumeLine:
         "Personligt AI-studieverktyg, använt dagligen: svaren hänvisar till exakt de stycken och sidor de bygger på.",
       summary:
         "Flytande chatbotsvar var till ingen nytta när jag pluggade inför prov om jag inte kunde kontrollera dem. Jag byggde en personlig AI-handledare för mitt eget PDF-bibliotek och använde den dagligen. Varje hämtat stycke behåller sin fil och sida ända fram till svaret, så att varje svar kan kontrolleras mot dokumentet.",
-      status: "Personligt verktyg · använt dagligen",
+      status: "Personligt verktyg · använt dagligen · byggs om",
       responsibility:
         "Utformat, byggt och använt dagligen: dokumentinläsning, sökning, modellintegration och Tutor-gränssnittet, allt på min egen hårdvara.",
       problem:
-        "Jag pluggade inför prov inom skatteområdet med ett stort och växande bibliotek av PDF:er. Allmänna chattbotar gav välformulerade svar som jag inte kunde kontrollera. Jag byggde Fiscal Brain så att varje svar pekar tillbaka på exakt källtext och sida, vilket är det som gör ett AI-svar användbart för seriösa studier.",
+        "Jag pluggade inför prov inom skatteområdet med ett stort och växande bibliotek av PDF:er. Allmänna chattbotar gav välformulerade svar som jag inte kunde kontrollera. Jag byggde Study Brain så att varje svar pekar tillbaka på exakt källtext och sida, vilket är det som gör ett AI-svar användbart för seriösa studier.",
       architecture:
         "FastAPI köar inläsningsjobben. En separat worker extraherar och delar upp PDF:er, skriver deras struktur till Neo4j och lagrar embeddings av hela textavsnitt i Qdrant. Tutor hämtar evidens, skickar den till en modell och returnerar svaret med källmetadata. Den inspelade REST-demon kördes med lokal Ollama och qwen3:8b. Dess två evidensposter är märkta vector. Fulltextsökning och grafberikning i Neo4j finns i koden, men deras bidrag till just detta svar mättes inte separat.",
       steps: [

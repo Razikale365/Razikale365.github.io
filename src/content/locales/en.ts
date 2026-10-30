@@ -65,7 +65,7 @@ export const en: SiteText = {
         title: "Make answers inspectable.",
         body: "Carry source text and page references through ingestion, retrieval and model output. Verify the evidence against the document it came from.",
         link: "See the document-to-evidence path →",
-        slug: "fiscal-brain",
+        slug: "study-brain",
       },
     ],
     openEyebrow: "01 / Nordic energy, built in public",
@@ -96,7 +96,7 @@ export const en: SiteText = {
       "Tell me what you’re building. I’m looking for backend, full-stack and applied AI roles, in Nordic energy and beyond.",
     contactResume: "Résumé →",
     contactNote:
-      "Based in Brazil. Fluent in English, learning Swedish. Available to relocate with visa sponsorship, or to work remotely.",
+      "Based in Brazil. Fluent in English, learning Swedish. Available to relocate to Sweden, Denmark or elsewhere in Europe with visa sponsorship, or to work remotely.",
   },
   caseStudy: {
     titleSuffix: "Engineering case study",
@@ -123,23 +123,23 @@ export const en: SiteText = {
     otherCases: "Other case studies",
     keepExploring: "Keep exploring",
   },
-  fiscalEvidence: {
+  studyEvidence: {
     eyebrow: "Verified on a synthetic document",
     title: "An answer with evidence you can inspect.",
     introBefore: "The demo document is labeled",
     introAfter:
-      "Every tax rule, amount and deadline in these captures is fictional. They test ingestion and provenance. The product interface is in Portuguese.",
-    tutorLabel: "Open the full-size Fiscal Brain answer and evidence capture",
+      "Every tax rule, amount and deadline in these captures is fictional. They test ingestion and provenance. The product interface is in Portuguese. The captures are from the earlier build, then named Fiscal Brain.",
+    tutorLabel: "Open the full-size Study Brain answer and evidence capture",
     tutorAlt:
       "Recorded Tutor answer showing the fictional 17-day appeal period beside two PDF sources, pages 1 and 2, vector retrieval labels and ranking scores.",
     tutorCaption:
       "The saved answer, scrolled to the appeal passage, alongside both evidence items. Cropped from the real 1366 px browser capture; output is unchanged. Scores rank retrieved material, not answer confidence. Open the image to read it at full size.",
-    ingestionLabel: "Open the full-size Fiscal Brain completed ingestion capture",
+    ingestionLabel: "Open the full-size Study Brain completed ingestion capture",
     ingestionAlt:
       "Ingestion page history showing fiscal-brain-golden-demo.pdf with complete status.",
     ingestionCaption:
       "Completed job in the ingestion history. The retained job record reports two chunks and zero errors; the idle console is not a live processing trace.",
-    mobileLabel: "Open the full-size Fiscal Brain mobile evidence capture",
+    mobileLabel: "Open the full-size Study Brain mobile evidence capture",
     mobileAlt:
       "At 390 px, the mobile evidence drawer exposes both synthetic PDF sources, their page numbers, vector method and retrieval scores.",
     mobileCaption:
@@ -162,7 +162,7 @@ export const en: SiteText = {
     educationHeading: "Education & languages",
     languagesLabel: "Languages:",
     summary:
-      "Full-stack engineer with five years shipping production software in PHP and Python, largely for the public sector, now focused on Nordic energy data. Built in public: nordic-balancing on PyPI and Nordic Balancing Watch. Also: patient regulation in production and verifiable AI answers.",
+      "Full-stack engineer with five years shipping production software in Python and PHP, largely for the public sector, plus TypeScript/React and applied AI (RAG, LLMs). Now building open-source tools for Nordic energy data.",
     experience: {
       title: "Full-Stack Developer",
       company: "DemandaNet",
@@ -174,27 +174,27 @@ export const en: SiteText = {
         "Built a LangChain chatbot that turns plain-language questions into SQL; delivered AWS-backed improvements.",
       ],
     },
-    fiscalBrain: {
-      title: "Fiscal Brain — personal AI study tool, used daily",
+    studyBrain: {
+      title: "Study Brain — personal AI study tool, used daily",
       points: [
-        "Built an AI tutor that cites its sources: async PDF ingestion (FastAPI + worker) into Qdrant and Neo4j.",
-        "Ran it daily on my own hardware, splitting inference between local and cloud providers; evidence checked verbatim against the source.",
+        "Built a RAG tutor that cites its sources: async PDF ingestion (FastAPI + worker), Qdrant vector search, Neo4j.",
+        "Ran it daily on my own hardware, splitting inference between local and cloud models; evidence checked verbatim.",
       ],
     },
     capabilities: [
       {
         title: "Backend & data",
         detail:
-          "Python, PHP, Laravel, FastAPI, SQLAlchemy, SQL, REST APIs, PostgreSQL, MySQL, Oracle, migrations and ETL.",
+          "Python, FastAPI, SQLAlchemy, PHP, Laravel, Node.js, SQL (PostgreSQL, MySQL, Oracle), REST APIs, ETL.",
       },
       {
         title: "Frontend",
-        detail: "React, TypeScript, JavaScript, HTML, CSS and operational interfaces.",
+        detail: "TypeScript, React, Next.js, JavaScript, HTML, CSS and operational interfaces.",
       },
       {
-        title: "Delivery & applied AI",
+        title: "Applied AI, cloud & delivery",
         detail:
-          "Git, AWS, testing, document ingestion and retrieval, Qdrant, Neo4j, Ollama, LangChain and natural-language-to-SQL chatbots.",
+          "RAG and LLM apps (Qdrant, Neo4j, Ollama, LangChain, natural language to SQL); AWS, Google Cloud, Cloudflare; CI/CD with GitHub Actions; pytest and Playwright tests.",
       },
     ],
     education: {
@@ -252,18 +252,18 @@ export const en: SiteText = {
         "Operational workflows are implemented. National health-system integrations require additional configuration, and production readiness has separate release requirements.",
       discussion: "Where should optimistic version checks end and transactional locking begin?",
     },
-    "fiscal-brain": {
+    "study-brain": {
       domain: "Applied AI · personal study tool",
       headline: "AI answers you can check against the source.",
       resumeLine:
         "Personal AI study tool, used daily: answers cite the exact passages and pages they rely on.",
       summary:
         "Fluent chatbot answers were no use for exam study if I couldn’t check them. I built a personal AI tutor over my own PDF library and used it daily. Each retrieved passage keeps its file and page all the way to the answer, so every answer can be checked against the document.",
-      status: "Personal tool · used daily",
+      status: "Personal tool · used daily · being rebuilt",
       responsibility:
         "Designed, built and used daily: document ingestion, retrieval, model integration and the Tutor interface, all running on my own hardware.",
       problem:
-        "I was preparing for tax exams from a large, growing library of PDFs. General-purpose chatbots gave fluent answers I couldn’t check. I built Fiscal Brain so that every answer points back to the exact source text and page, which is what makes an AI answer usable for serious study.",
+        "I was preparing for tax exams from a large, growing library of PDFs. General-purpose chatbots gave fluent answers I couldn’t check. I built Study Brain so that every answer points back to the exact source text and page, which is what makes an AI answer usable for serious study.",
       architecture:
         "FastAPI queues ingestion work. A separate worker extracts and chunks PDFs, writes their structure to Neo4j, and embeds full chunk text in Qdrant. Tutor retrieves evidence, passes it to a model and returns the answer with source metadata. The recorded REST demo was configured for local Ollama with qwen3:8b. Its two evidence items are labeled vector. Neo4j full-text search and graph enrichment exist in code, but their contribution to this answer was not separately measured.",
       steps: [

@@ -1,4 +1,4 @@
-export type ProjectSlug = "dispensamais" | "fiscal-brain" | "regmais";
+export type ProjectSlug = "dispensamais" | "study-brain" | "regmais";
 export type OpenWorkId = "nordic-balancing" | "nordic-balancing-watch" | "entsoe-py";
 
 type Step = { readonly title: string; readonly detail: string };
@@ -131,7 +131,7 @@ export type SiteText = {
     readonly otherCases: string;
     readonly keepExploring: string;
   };
-  readonly fiscalEvidence: {
+  readonly studyEvidence: {
     readonly eyebrow: string;
     readonly title: string;
     readonly introBefore: string;
@@ -168,7 +168,7 @@ export type SiteText = {
       readonly period: string;
       readonly points: readonly string[];
     };
-    readonly fiscalBrain: { readonly title: string; readonly points: readonly string[] };
+    readonly studyBrain: { readonly title: string; readonly points: readonly string[] };
     readonly capabilities: readonly { readonly title: string; readonly detail: string }[];
     readonly education: { readonly title: string; readonly status: string };
     readonly languages: string;

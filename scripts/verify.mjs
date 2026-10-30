@@ -3,7 +3,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import AxeBuilder from "@axe-core/playwright";
 import { chromium } from "playwright";
 const base = process.env.TEST_URL || "http://127.0.0.1:4322";
-const localized = ["/", "/work/dispensamais/", "/work/regmais/", "/work/fiscal-brain/", "/resume/"];
+const localized = ["/", "/work/dispensamais/", "/work/regmais/", "/work/study-brain/", "/resume/"];
 const prefixes = ["", "/pt-br", "/sv"];
 const paths = [
   ...prefixes.flatMap((prefix) => localized.map((path) => `${prefix}${path}`)),
@@ -85,7 +85,7 @@ try {
   }
   const page = await browser.newPage({ viewport: { width: 375, height: 900 } });
   await page.goto(base);
-  const flagshipPaths = ["/work/regmais/", "/work/dispensamais/", "/work/fiscal-brain/"];
+  const flagshipPaths = ["/work/regmais/", "/work/dispensamais/", "/work/study-brain/"];
   assert.deepEqual(
     await page
       .locator(".work-index ol li a")
@@ -128,7 +128,7 @@ try {
   assert.equal(
     await page
       .getByRole("heading", {
-        name: "Fiscal Brain — personal AI study tool, used daily",
+        name: "Study Brain — personal AI study tool, used daily",
         exact: true,
       })
       .count(),

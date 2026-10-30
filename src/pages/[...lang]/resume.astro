@@ -23,7 +23,7 @@ const openWork = getOpenWork(locale);
     <section><h2>{resume.profileHeading}</h2><p>{resume.summary}</p></section>
     <section><h2>{resume.experienceHeading}</h2><h3>{resume.experience.title} · {resume.experience.company}</h3><p class="small muted">{resume.experience.period}</p><ul>{resume.experience.points.map(point => <li>{point}</li>)}</ul></section>
     <section><h2>{resume.openHeading}</h2>{openWork.map(item => <p><strong>{item.name}:</strong> {item.resumeLine} {item.links.map((link, index) => <>{index > 0 && " · "}<a href={link.href}>{link.href.replace("https://", "").replace(/\/$/, "")}</a></>)}</p>)}</section>
-    <section><h2>{resume.independentHeading}</h2>{projects.map(project => <div class="resume-project">{project.slug === "fiscal-brain" ? <><h3>{resume.fiscalBrain.title}</h3><ul>{resume.fiscalBrain.points.map(point => <li>{point}</li>)}</ul></> : <><h3>{project.name}</h3><p>{project.resumeLine} <span class="muted">{project.status}</span></p></>}</div>)}</section>
+    <section><h2>{resume.independentHeading}</h2>{projects.map(project => <div class="resume-project">{project.slug === "study-brain" ? <><h3>{resume.studyBrain.title}</h3><ul>{resume.studyBrain.points.map(point => <li>{point}</li>)}</ul></> : <><h3>{project.name}</h3><p>{project.resumeLine} <span class="muted">{project.status}</span></p></>}</div>)}</section>
     <section><h2>{resume.capabilitiesHeading}</h2>{resume.capabilities.map(item => <p><strong>{item.title}:</strong> {item.detail}</p>)}</section>
     <section><h2>{resume.educationHeading}</h2><p><strong>{resume.education.title}</strong> — {resume.education.status}.</p><p><strong>{resume.languagesLabel}</strong> {resume.languages}</p></section>
   </article>

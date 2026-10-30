@@ -2,9 +2,9 @@
 import { Image } from "astro:assets";
 import regmaisImage from "../../../assets/regmais-allocation.png";
 import Badge from "../../../components/Badge.astro";
-import FiscalBrainEvidence from "../../../components/FiscalBrainEvidence.astro";
 import Flow from "../../../components/Flow.astro";
 import Link from "../../../components/Link.astro";
+import StudyBrainEvidence from "../../../components/StudyBrainEvidence.astro";
 import { getText } from "../../../content/index";
 import { type Project, getProjects } from "../../../content/projects";
 import { type Locale, localeParams, localePath } from "../../../i18n/locales";
@@ -35,7 +35,7 @@ const projects = getProjects(locale);
     <section class="case-section" aria-labelledby="decisions"><h2 class="section-title" id="decisions">{t.decisions}</h2><div class="decision-list">{project.decisions.map((decision,index) => <article><span class="eyebrow">0{index+1}</span><div><h3>{decision.title}</h3><p>{decision.body}</p></div></article>)}</div></section>
     {project.slug === 'regmais' && <figure class="interface-capture"><Image src={regmaisImage} alt={t.regmaisAlt} widths={[640,960,1280]} sizes="(max-width: 768px) 90vw, 1100px" format="webp" loading="lazy" /><figcaption class="small muted">{t.regmaisCaption}</figcaption></figure>}
     <section class="case-section case-body"><div><h2 class="section-title">{t.verification}</h2><p>{project.verification}</p><p class="muted">{project.limitation}</p></div>{project.sourceHref ? <aside class="evidence-note"><p class="eyebrow">{t.sourceEyebrow}</p><p>{t.sourcePublic}</p><Link href={project.sourceHref}>{t.sourceRead}</Link></aside> : <aside class="evidence-note"><p class="eyebrow">{t.sourceEyebrow}</p><p>{t.sourcePrivate}</p><Link href={`${localePath(locale)}#contact`}>{t.discuss}</Link></aside>}</section>
-    {project.slug === "fiscal-brain" && <FiscalBrainEvidence locale={locale} />}
+    {project.slug === "study-brain" && <StudyBrainEvidence locale={locale} />}
     <nav class="case-next" aria-label={t.otherCases}><p class="eyebrow">{t.keepExploring}</p>{projects.filter(item => item.slug !== project.slug).map(item => <Link href={localePath(locale, `/work/${item.slug}/`)}>{item.name} →</Link>)}</nav>
   </article>
 </Base>

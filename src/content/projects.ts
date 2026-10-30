@@ -21,9 +21,9 @@ const projectMeta: readonly Omit<Project, keyof ProjectText>[] = [
     stack: ["Python / FastAPI", "PostgreSQL", "React / TypeScript"],
   },
   {
-    slug: "fiscal-brain",
+    slug: "study-brain",
     number: "03",
-    name: "Fiscal Brain",
+    name: "Study Brain",
     tone: "amber",
     stack: ["Python / FastAPI", "Qdrant / Neo4j", "Ollama", "Next.js / TypeScript"],
   },
