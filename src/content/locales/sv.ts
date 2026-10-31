@@ -171,7 +171,7 @@ export const sv: SiteText = {
         "Byggde och förvaltade moduler som låter skolnätverk importera, återställa, bearbeta och hantera sina data.",
         "Utformade modulen Dynamic Virtual Warehouse; byggde ut plattformen för skolbibliotek och kommunala nät.",
         "Migrerade äldre data från Oracle till MySQL med bevarad dataintegritet och obruten drift.",
-        "Byggde en LangChain-chattbot som gör frågor på vanligt språk till SQL; levererade AWS-förbättringar.",
+        "Byggde en LangChain-chattbot som gör frågor på vanligt språk till SQL; levererade förbättringar i AWS (S3, EC2, Lambda).",
       ],
     },
     studyBrain: {

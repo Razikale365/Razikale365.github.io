@@ -26,7 +26,7 @@ Words that Swedish developer ads ask for, named only where there is evidence or 
 - **Cloudflare:** `nordic-balancing-watch` is deployed to Cloudflare Pages with a D1 database.
 - **RAG, LLM, embeddings, vector search:** Study Brain's retrieval path, as described in its case study (Qdrant vectors, Ollama models). These are names for what it does, not new claims.
 - **Next.js:** Study Brain's stack in `projects.ts`.
-- **AWS:** DemandaNet, as João Paulo stated (already in the experience line).
+- **AWS (S3, EC2, Lambda):** DemandaNet, as João Paulo stated on 2026-10-31 (in the experience line). He works with most AWS services; only these three are named.
 - **Google Cloud:** stated by João Paulo, used in several projects. No public repository shows it.
 - **Linux:** stated by João Paulo on 2026-10-30 (setting up Linux machines and working on the command line). The public CI runs on Ubuntu.
 - **Relocation to Sweden, Denmark or elsewhere in Europe:** João Paulo's stated target countries.

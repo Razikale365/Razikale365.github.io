@@ -171,7 +171,7 @@ export const ptBr: SiteText = {
         "Construí e mantive módulos que permitem às redes de ensino importar, recuperar, processar e gerir seus dados.",
         "Projetei o almoxarifado virtual dinâmico e levei a plataforma a bibliotecas escolares e redes intramunicipais.",
         "Migrei dados legados de Oracle para MySQL, preservando a integridade e mantendo a operação no ar.",
-        "Construí um chatbot com LangChain que converte perguntas em linguagem comum em SQL; fiz melhorias na AWS.",
+        "Construí um chatbot com LangChain que converte perguntas em linguagem comum em SQL; fiz melhorias na AWS (S3, EC2, Lambda).",
       ],
     },
     studyBrain: {

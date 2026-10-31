@@ -171,7 +171,7 @@ export const en: SiteText = {
         "Built and maintained modules that let school networks import, recover, process and manage their data.",
         "Designed the Dynamic Virtual Warehouse module and extended the platform to school libraries and intra-municipal networks.",
         "Migrated legacy Oracle data to MySQL, protecting data integrity and keeping operations running.",
-        "Built a LangChain chatbot that turns plain-language questions into SQL; delivered AWS-backed improvements.",
+        "Built a LangChain chatbot that turns plain-language questions into SQL; delivered improvements on AWS (S3, EC2, Lambda).",
       ],
     },
     studyBrain: {
