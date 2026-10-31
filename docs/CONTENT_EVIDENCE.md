@@ -42,6 +42,10 @@ Not added for lack of evidence: Docker (only a benchmark Dockerfile is public), 
 
 RegMais, DispensaMais and Study Brain repositories stay private and have no source links.
 
+## Engineering decisions page
+
+`/decisions/` restates eight decisions already published in the RegMais, DispensaMais and Study Brain case studies and the nordic-balancing description. It adds no new claims; each decision links to its case study or to the nordic-balancing source. It is not linked from the site navigation.
+
 ## Languages of the site
 
 English is the default; Brazilian Portuguese and Swedish mirror it. Every translated claim matches an English claim, and no claim exists in only one language.

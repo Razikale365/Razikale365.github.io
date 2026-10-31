@@ -3,7 +3,14 @@ import { mkdir, writeFile } from "node:fs/promises";
 import AxeBuilder from "@axe-core/playwright";
 import { chromium } from "playwright";
 const base = process.env.TEST_URL || "http://127.0.0.1:4322";
-const localized = ["/", "/work/dispensamais/", "/work/regmais/", "/work/study-brain/", "/resume/"];
+const localized = [
+  "/",
+  "/work/dispensamais/",
+  "/work/regmais/",
+  "/work/study-brain/",
+  "/resume/",
+  "/decisions/",
+];
 const prefixes = ["", "/pt-br", "/sv"];
 const paths = [
   ...prefixes.flatMap((prefix) => localized.map((path) => `${prefix}${path}`)),

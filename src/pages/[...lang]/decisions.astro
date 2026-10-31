@@ -1,0 +1,26 @@
+---
+import Link from "../../components/Link.astro";
+import { getDecisionsPage } from "../../content/decisions";
+import { getText } from "../../content/index";
+import { type Locale, localeParams, localePath } from "../../i18n/locales";
+import Base from "../../layouts/Base.astro";
+export const getStaticPaths = localeParams;
+interface Props {
+  readonly locale: Locale;
+}
+const { locale } = Astro.props;
+const { page: t, decisions } = getDecisionsPage(locale);
+const back = getText(locale).caseStudy.back;
+---
+<Base title={t.title} description={t.description} locale={locale} path="/decisions/">
+  <article class="container case-study">
+    <a class="back-link" href={`${localePath(locale)}#work`}>{back}</a>
+    <header class="case-header"><p class="eyebrow">{t.eyebrow}</p><h1 class="display">{t.heading}</h1><p class="lead">{t.intro}</p></header>
+    <section class="case-section" aria-labelledby="decisions"><h2 class="section-title" id="decisions">{t.listTitle}</h2><div class="decision-list">{decisions.map((decision, index) => <article><span class="eyebrow">{String(index + 1).padStart(2, "0")}</span><div><p class="eyebrow">{decision.project}</p><h3>{decision.title}</h3><p><strong>{t.chosen}</strong> {decision.chosen}</p><p><strong>{t.against}</strong> {decision.against}</p><p><strong>{t.why}</strong> {decision.why}</p><p class="decision-source"><Link href={decision.source.href}>{decision.source.label}</Link></p></div></article>)}</div></section>
+  </article>
+</Base>
+
+<style>
+  .decision-list p + p { margin-top: var(--s2); }
+  .decision-list .decision-source { margin-top: var(--s3); }
+</style>
