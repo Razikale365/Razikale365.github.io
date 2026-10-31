@@ -28,9 +28,10 @@ Words that Swedish developer ads ask for, named only where there is evidence or 
 - **Next.js:** Study Brain's stack in `projects.ts`.
 - **AWS:** DemandaNet, as João Paulo stated (already in the experience line).
 - **Google Cloud:** stated by João Paulo, used in several projects. No public repository shows it.
+- **Linux:** stated by João Paulo on 2026-10-30 (setting up Linux machines and working on the command line). The public CI runs on Ubuntu.
 - **Relocation to Sweden, Denmark or elsewhere in Europe:** João Paulo's stated target countries.
 
-Not added for lack of evidence: Docker (only a benchmark Dockerfile is public), Linux, Azure, Kubernetes.
+Not added for lack of evidence: Docker (only a benchmark Dockerfile is public), Azure, Kubernetes.
 
 ## Nordic open-source work
 

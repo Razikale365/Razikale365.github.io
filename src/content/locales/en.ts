@@ -194,7 +194,7 @@ export const en: SiteText = {
       {
         title: "Applied AI, cloud & delivery",
         detail:
-          "RAG and LLM apps (Qdrant, Neo4j, Ollama, LangChain, natural language to SQL); AWS, Google Cloud, Cloudflare; CI/CD with GitHub Actions; pytest and Playwright tests.",
+          "RAG and LLM apps (Qdrant, Neo4j, Ollama, LangChain, natural language to SQL); AWS, Google Cloud, Cloudflare, Linux; CI/CD with GitHub Actions; pytest and Playwright tests.",
       },
     ],
     education: {

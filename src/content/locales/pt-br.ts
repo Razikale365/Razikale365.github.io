@@ -194,7 +194,7 @@ export const ptBr: SiteText = {
       {
         title: "IA aplicada, nuvem e entrega",
         detail:
-          "Aplicações com RAG e LLMs (Qdrant, Neo4j, Ollama, LangChain, linguagem natural para SQL); AWS, Google Cloud, Cloudflare; CI/CD com GitHub Actions; testes com pytest e Playwright.",
+          "Aplicações com RAG e LLMs (Qdrant, Neo4j, Ollama, LangChain, linguagem natural para SQL); AWS, Google Cloud, Cloudflare, Linux; CI/CD com GitHub Actions; testes com pytest e Playwright.",
       },
     ],
     education: {
